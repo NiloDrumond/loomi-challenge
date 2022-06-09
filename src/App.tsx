@@ -1,17 +1,15 @@
 import React from 'react';
 
-import { ThemeProvider } from 'styled-components';
-import defaultTheme from './styles/theme/defaultTheme';
-import GlobalStyles from './styles/GlobalStyles';
+import { ChakraProvider } from '@chakra-ui/react';
 import Home from './pages/Home';
+import theme from './styles';
 
 const App = () => {
   return (
     <>
-      <ThemeProvider theme={defaultTheme}>
+      <ChakraProvider theme={theme}>
         <Home />
-        <GlobalStyles />
-      </ThemeProvider>
+      </ChakraProvider>
     </>
   );
 };

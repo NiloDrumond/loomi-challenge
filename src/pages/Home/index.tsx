@@ -1,28 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
+import { Center, Text } from '@chakra-ui/react';
 import React from 'react';
-import { GiSpiderMask } from 'react-icons/gi';
-
-import { Container, Section, Description, Warning, Link } from './styles';
+import ApexTest from '../../components/ApexTest';
 
 const Home = () => {
   return (
-    <Container>
-      <Section>
-        <Description>
-          "With great power there must also come great responsibility"
-        </Description>
-        <p>or simply</p>
-        <Description>"With great power comes great responsibility"</Description>
-        <p>or simply</p>
-        <Warning>
-          "Don't forget my star and follow me on Github/LucasReinaldo"
-        </Warning>
-      </Section>
-      <GiSpiderMask size={40} />
-      <Link href="https://fettblog.eu/typescript-react-why-i-dont-use-react-fc/">
-        TypeScript + React: Why I don't use React.FC
-      </Link>
-    </Container>
+    <Center flex={1} h="100vh" w="100vw">
+      <ApexTest />
+    </Center>
   );
 };
 
