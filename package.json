@@ -1,14 +1,20 @@
 {
-  "name": "react-typescript-eslint-prettier-boilerplate",
+  "name": "loomi-challenge",
+  "author": {
+    "name": "Nilo Drumond",
+    "email": "nilobdrumond@gmail.com"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@chakra-ui/react": "^1.7.2",
+    "@chakra-ui/react": "^1.8.8",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@fontsource/ubuntu": "^4.5.10",
     "apexcharts": "^3.35.3",
     "axios": "^0.27.2",
     "framer-motion": "^4",
+    "hex-rgb": "^5.0.0",
     "react": "^17.0.1",
     "react-apexcharts": "^1.4.0",
     "react-dom": "^17.0.1",
@@ -21,6 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
+  },
+  "resolutions": {
+    "react-error-overlay": "6.0.9"
   },
   "eslintConfig": {
     "extends": [
