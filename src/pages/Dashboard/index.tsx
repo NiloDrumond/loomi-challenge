@@ -4,7 +4,7 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <Center flex={1} h="100vh" w="100vw">
+    <Center flex={1}>
       <Text>Dashboard</Text>
     </Center>
   );

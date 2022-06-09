@@ -39,6 +39,10 @@ const theme = extendTheme(
     variant: 'filled',
     components: ['Input', 'NumberInput', 'PinInput'],
   }),
+  withDefaultVariant({
+    variant: 'ghost',
+    components: ['IconButton', 'Button'],
+  }),
 );
 
 export default theme;

@@ -1,5 +1,5 @@
 function useAuth() {
-  return { isAuthenticated: false };
+  return { isAuthenticated: true };
 }
 
 export { useAuth };
