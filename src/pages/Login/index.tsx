@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Button,
   Center,
-  Flex,
   FormControl,
   FormLabel,
   Text,
@@ -11,7 +10,6 @@ import {
   VStack,
   Box,
 } from '@chakra-ui/react';
-import hexRgb from 'hex-rgb';
 
 import Background from '../../assets/curve-patterns.svg';
 import Logo from '../../assets/logo-icon.svg';
