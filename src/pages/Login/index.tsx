@@ -11,9 +11,9 @@ import {
   Box,
 } from '@chakra-ui/react';
 
-import Background from '../../assets/curve-patterns.svg';
-import Logo from '../../assets/logo-icon.svg';
-import PasswordInput from '../../components/PasswordInput';
+import PasswordInput from 'components/PasswordInput';
+import Background from 'assets/curve-patterns.svg';
+import Logo from 'assets/logo-icon.svg';
 
 const Login: React.FC = () => {
   return (
