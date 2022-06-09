@@ -22,11 +22,14 @@ const theme = extendTheme(
           height: '100vh',
           width: '100vw',
           display: 'flex',
-          color: 'text.400',
+          color: 'main.500500',
           fontFamily: "'Ubuntu', sans-serif",
         },
         '*': {
           boxSizing: 'border-box',
+        },
+        'body.using-mouse *:focus': {
+          'box-shadow': 'none !important',
         },
       }),
     },

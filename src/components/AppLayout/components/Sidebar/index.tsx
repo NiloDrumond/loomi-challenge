@@ -2,7 +2,7 @@ import React from 'react';
 import { Divider, Icon, IconButton, VStack } from '@chakra-ui/react';
 import {
   FiAlignLeft,
-  FiCalendar,
+  FiCreditCard,
   FiHexagon,
   FiHome,
   FiLayers,
@@ -12,7 +12,7 @@ import {
   FiTruck,
   FiUser,
 } from 'react-icons/fi';
-import SidebarIcon from './Sidebar.Icon';
+import SidebarItem from './Sidebar.Item';
 
 const Sidebar: React.FC = () => {
   return (
@@ -25,29 +25,17 @@ const Sidebar: React.FC = () => {
       pt={4}
       spacing={4}
     >
-      <IconButton
-        icon={<SidebarIcon as={FiAlignLeft} />}
-        aria-label="Expandir navegacao"
-      />
+      <SidebarItem label="Expandir" icon={FiAlignLeft} />
       <Divider />
-      <IconButton icon={<SidebarIcon as={FiHome} />} aria-label="Dashboard" />
-      <IconButton icon={<SidebarIcon as={FiLayers} />} aria-label="Catalogo" />
-      <IconButton icon={<SidebarIcon as={FiTool} />} aria-label="Catalogo" />
-      <IconButton icon={<SidebarIcon as={FiTruck} />} aria-label="Catalogo" />
-      <IconButton
-        icon={<SidebarIcon as={FiShoppingCart} />}
-        aria-label="Catalogo"
-      />
-      <IconButton
-        icon={<SidebarIcon as={FiCalendar} />}
-        aria-label="Catalogo"
-      />
-      <IconButton
-        icon={<SidebarIcon as={FiMessageSquare} />}
-        aria-label="Catalogo"
-      />
-      <IconButton icon={<SidebarIcon as={FiUser} />} aria-label="Catalogo" />
-      <IconButton icon={<SidebarIcon as={FiHexagon} />} aria-label="Catalogo" />
+      <SidebarItem linkTo="/app" label="Inicio" icon={FiHome} />
+      <SidebarItem linkTo="/app/catalog" label="Catalogo" icon={FiLayers} />
+      <SidebarItem linkTo="/app" label="Servicos" icon={FiTool} />
+      <SidebarItem linkTo="/app/logistics" label="Logistica" icon={FiTruck} />
+      <SidebarItem linkTo="/app" label="Pedidos" icon={FiShoppingCart} />
+      <SidebarItem linkTo="/app" label="Pagamentos" icon={FiCreditCard} />
+      <SidebarItem linkTo="/app" label="Comunicacao" icon={FiMessageSquare} />
+      <SidebarItem linkTo="/app" label="Clientes" icon={FiUser} />
+      <SidebarItem linkTo="/app" label="Configuracoes" icon={FiHexagon} />
     </VStack>
   );
 };

@@ -8,7 +8,15 @@ const UserProfile: React.FC<UserProfileProps> = ({ name, avatarOnly }) => {
   return (
     <HStack>
       {!avatarOnly && <Text>{name}</Text>}
-      <Center w="10" h="10" borderRadius="50%" bg="purple.500" color="white">
+      <Center
+        w="10"
+        h="10"
+        borderRadius="50%"
+        bg="orange.300"
+        fontWeight={500}
+        color="main.500300"
+        fontSize="xl"
+      >
         {name[0]}
       </Center>
     </HStack>

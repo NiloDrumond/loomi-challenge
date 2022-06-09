@@ -1,24 +1,14 @@
-import React, { PropsWithChildren } from 'react';
-import { Avatar, Flex, HStack, Image, Text, VStack } from '@chakra-ui/react';
+import React from 'react';
+import { Flex, HStack } from '@chakra-ui/react';
 
-import Logo from 'assets/logo-icon.svg';
 import BackgroundBox from 'components/BackgroundBox';
-import UserProfile from 'components/UserProfile';
 import Sidebar from './components/Sidebar';
+import Header from './components/Header';
 
-const AppLayout: React.FC<PropsWithChildren> = ({ children }) => {
+const AppLayout: React.FC = ({ children }) => {
   return (
     <Flex flexDirection="column" flex={1}>
-      <HStack
-        boxShadow="0px 3px 6px #00000014"
-        px={10}
-        py={4}
-        zIndex={1}
-        justifyContent="space-between"
-      >
-        <Image height="12" width="auto" src={Logo} />
-        <UserProfile name="Eduardo" />
-      </HStack>
+      <Header />
       <Flex position="relative" flex={1}>
         <BackgroundBox />
         <HStack flex={1} alignItems="flex-start" p={8} spacing={8}>

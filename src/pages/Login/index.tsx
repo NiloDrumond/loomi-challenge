@@ -8,7 +8,6 @@ import {
   Image,
   Input,
   VStack,
-  Box,
 } from '@chakra-ui/react';
 
 import PasswordInput from 'components/PasswordInput';
@@ -31,7 +30,7 @@ const Login: React.FC = () => {
       >
         <VStack spacing={4} mb={4}>
           <Image height="auto" width="240px" src={Logo} />
-          <Text color="text.600" fontWeight={500}>
+          <Text color="main.500600" fontWeight={500}>
             Entrar na plataforma
           </Text>
         </VStack>

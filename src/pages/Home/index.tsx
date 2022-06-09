@@ -5,7 +5,7 @@ import React from 'react';
 const Home = () => {
   return (
     <Center flex={1}>
-      <Text>Dashboard</Text>
+      <Text>Home</Text>
     </Center>
   );
 };
