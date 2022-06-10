@@ -1,9 +1,4 @@
-import {
-  ChakraTheme,
-  extendTheme,
-  theme as defaultTheme,
-  withDefaultVariant,
-} from '@chakra-ui/react';
+import { ChakraTheme, extendTheme, withDefaultVariant } from '@chakra-ui/react';
 import { colors } from './theme/colors';
 import { forms } from './forms';
 import { typography } from './typography';
@@ -17,7 +12,7 @@ const theme = extendTheme(
     },
     styles: {
       global: () => ({
-        ...defaultTheme.styles,
+        // ...defaultTheme.styles,
         'body > #root': {
           height: '100vh',
           width: '100vw',
@@ -40,7 +35,7 @@ const theme = extendTheme(
   } as Partial<ChakraTheme>,
   withDefaultVariant({
     variant: 'filled',
-    components: ['Input', 'NumberInput', 'PinInput'],
+    components: ['Input', 'NumberInput', 'PinInput', 'Textarea', 'Select'],
   }),
   withDefaultVariant({
     variant: 'ghost',

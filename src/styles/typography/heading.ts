@@ -1,5 +1,5 @@
 import { ComponentStyleConfig } from '@chakra-ui/react';
 
 export const Heading: ComponentStyleConfig = {
-  baseStyle: { color: 'main.500600' },
+  baseStyle: { color: 'main.300' },
 };

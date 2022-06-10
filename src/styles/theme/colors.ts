@@ -2,6 +2,7 @@ import { Colors } from '@chakra-ui/react';
 
 export const colors: Colors = {
   brand: {
+    200: '#C0D7E5',
     500: '#5A4CA7',
     100: '#f6f6f9',
   },

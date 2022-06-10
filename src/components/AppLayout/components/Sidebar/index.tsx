@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  Divider,
-  useDisclosure,
-  useOutsideClick,
-  VStack,
-} from '@chakra-ui/react';
+import { Box, useDisclosure, useOutsideClick, VStack } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import {
   FiAlignLeft,
@@ -42,15 +36,18 @@ const Sidebar: React.FC = () => {
         bg="white"
         boxShadow="0px 3px 6px #00000029"
         borderRadius="sm"
-        h="100%"
+        h="calc(100vh - 10rem)"
+        maxH="calc(100vh - 10rem)"
         spacing={4}
         pt={4}
         px={5}
+        mt={8}
         position="absolute"
         alignItems="flex-start"
         left={0}
         top={0}
         overflow="hidden"
+        zIndex={10}
       >
         <SidebarItem
           label="Fechar"
