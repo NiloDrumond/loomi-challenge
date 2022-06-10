@@ -8,23 +8,16 @@ import {
   Image,
   Input,
   VStack,
-  Box,
 } from '@chakra-ui/react';
 
 import PasswordInput from 'components/PasswordInput';
-import Background from 'assets/curve-patterns.svg';
 import Logo from 'assets/logo-icon.svg';
+import BackgroundBox from 'components/BackgroundBox';
 
 const Login: React.FC = () => {
   return (
     <Center position="relative" flex={1}>
-      <Box
-        position="absolute"
-        bg="#f6f6f9"
-        bgImg={Background}
-        w="100%"
-        h="100%"
-      />
+      <BackgroundBox />
       <VStack
         spacing={8}
         zIndex={1}
@@ -37,7 +30,7 @@ const Login: React.FC = () => {
       >
         <VStack spacing={4} mb={4}>
           <Image height="auto" width="240px" src={Logo} />
-          <Text color="text.600" fontWeight={500}>
+          <Text color="main.500600" fontWeight={500}>
             Entrar na plataforma
           </Text>
         </VStack>
@@ -51,7 +44,7 @@ const Login: React.FC = () => {
             <PasswordInput />
           </FormControl>
         </VStack>
-        <Button colorScheme="brand" px={8} size="sm">
+        <Button variant="solid" colorScheme="brand" px={8} size="sm">
           Entrar
         </Button>
       </VStack>

@@ -4,7 +4,7 @@ export const FormLabel: ComponentStyleConfig = {
   baseStyle: {
     fontWeight: 400,
     fontSize: 'md',
-    color: 'text.400',
+    color: 'main.500500',
     marginLeft: '4',
   },
 };
