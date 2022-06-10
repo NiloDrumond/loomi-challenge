@@ -5,4 +5,6 @@ export type SidebarItemProps = {
   onClick?: () => void;
   icon: IconType;
   label: string;
+  customTooltip?: string;
+  isExpanded: boolean;
 };

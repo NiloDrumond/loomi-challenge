@@ -1,4 +1,4 @@
-import { ComponentStyleConfig } from '@chakra-ui/react';
+import { ComponentStyleConfig, theme } from '@chakra-ui/react';
 
 export const Button: ComponentStyleConfig = {
   baseStyle: { fontWeight: 400 },
@@ -7,5 +7,14 @@ export const Button: ComponentStyleConfig = {
       borderColor: 'main.400',
       color: 'main.400',
     },
+    'icon-only': (props) => ({
+      ...theme.components.Button.variants.ghost(props),
+      justifyContent: 'flex-start',
+      px: '10px',
+      '.chakra-button__icon': {
+        marginInlineEnd: '0 !important',
+      },
+      w: '100%',
+    }),
   },
 };

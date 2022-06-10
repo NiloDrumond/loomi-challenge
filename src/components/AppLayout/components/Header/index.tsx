@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button, HStack, Image } from '@chakra-ui/react';
 import Logo from 'assets/logo-icon.svg';
-import HeaderNotifications from './Header.Notifications';
-import HeaderActions from './Header.Actions';
+import HeaderActions from './components/HeaderActions';
+import HeaderNotifications from './components/HeaderNotifications';
 
 const Header: React.FC = () => {
   return (
