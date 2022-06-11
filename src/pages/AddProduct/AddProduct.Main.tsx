@@ -6,7 +6,7 @@ import FormSection from 'components/forms/FormSection';
 const AddProductMain: React.FC = () => {
   return (
     <VStack
-      boxShadow="0px 3px 6px #00000029"
+      boxShadow="md"
       bg="white"
       p={8}
       borderRadius="xl"

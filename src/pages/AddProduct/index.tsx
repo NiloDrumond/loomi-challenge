@@ -12,7 +12,7 @@ const AddProduct: React.FC = () => {
       <Heading fontSize="2xl">Adicionar produto</Heading>
       <AddProductMain />
       <VStack
-        boxShadow="0px 3px 6px #00000029"
+        boxShadow="md"
         bg="white"
         p={8}
         borderRadius="xl"

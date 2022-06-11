@@ -6,6 +6,9 @@ import { typography } from './typography';
 const theme = extendTheme(
   {
     colors,
+    shadows: {
+      float: '0px 0px 20px #0000001A',
+    },
     components: {
       ...forms,
       ...typography,
@@ -17,7 +20,7 @@ const theme = extendTheme(
           height: '100vh',
           width: '100vw',
           display: 'flex',
-          color: 'main.500500',
+          color: 'main.300',
           fontFamily: "'Ubuntu', sans-serif",
         },
         '*': {

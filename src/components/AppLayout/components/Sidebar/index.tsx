@@ -34,7 +34,7 @@ const Sidebar: React.FC = () => {
         }}
         ref={containerRef}
         bg="white"
-        boxShadow="0px 3px 6px #00000029"
+        boxShadow="md"
         borderRadius="sm"
         h="calc(100vh - 10rem)"
         maxH="calc(100vh - 10rem)"
