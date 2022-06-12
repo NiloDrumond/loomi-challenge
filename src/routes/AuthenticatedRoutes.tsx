@@ -4,7 +4,7 @@ import { useAuth } from 'hooks/auth/useAuth';
 import AppLayout from 'components/AppLayout';
 import UserProvider from 'hooks/user/User.provider';
 
-const AuthenticatedRoute: React.FC = ({ children }) => {
+const AuthenticatedRoute = () => {
   const { token } = useAuth();
   const location = useLocation();
 

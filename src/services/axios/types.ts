@@ -1,3 +1,5 @@
+export type UnknownObject = Record<string, unknown>;
+
 export type ApiConfig = {
   baseUrl: string;
 };
@@ -15,6 +17,6 @@ export type GetParams = {
 export type PostParams = {
   url: string;
   timeout?: number;
-  body?: any;
-  data?: any;
+  body?: UnknownObject;
+  data?: UnknownObject;
 };

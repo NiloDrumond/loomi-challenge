@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Icon,
-  IconButton,
   Popover,
   PopoverBody,
   PopoverContent,
@@ -13,7 +12,6 @@ import {
   Avatar,
 } from '@chakra-ui/react';
 import { FiLogOut, FiUser } from 'react-icons/fi';
-import UserProfile from 'components/UserProfile';
 import { hoverOnBlack } from 'styles/utils/hoverOnBlack';
 import { useAuth } from 'hooks/auth/useAuth';
 import { useUser } from 'hooks/user/useUser';

@@ -1,5 +1,11 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
-import { ApiConfig, GetParams, HttpResponse, PostParams } from './types';
+import {
+  ApiConfig,
+  GetParams,
+  HttpResponse,
+  PostParams,
+  UnknownObject,
+} from './types';
 
 class AxiosHelper {
   token: string | null;
@@ -31,8 +37,10 @@ class AxiosHelper {
   }
 
   public createInterceptor(
-    onResponse?: (response: AxiosResponse<any>) => AxiosResponse<any>,
-    onReject?: (error: any) => any,
+    onResponse?: (
+      response: AxiosResponse<UnknownObject>,
+    ) => AxiosResponse<UnknownObject>,
+    onReject?: (error: UnknownObject) => UnknownObject,
   ): number {
     const id = this.instance.interceptors.response.use(onResponse, onReject);
     return id;
@@ -49,7 +57,9 @@ class AxiosHelper {
     return url;
   }
 
-  public async get<T = any>(params: GetParams): Promise<HttpResponse<T>> {
+  public async get<T = UnknownObject>(
+    params: GetParams,
+  ): Promise<HttpResponse<T>> {
     const url = this.getUrl(params.url);
     const configs = {
       ...this.prepareConfig(),
@@ -63,7 +73,7 @@ class AxiosHelper {
     };
   }
 
-  public async post<T = any>(
+  public async post<T = UnknownObject>(
     params: PostParams,
   ): Promise<HttpResponse<T | undefined>> {
     const url = this.getUrl(params.url);
@@ -87,7 +97,7 @@ class AxiosHelper {
     }
   }
 
-  public async patch(params: PostParams): Promise<HttpResponse<any>> {
+  public async patch(params: PostParams): Promise<HttpResponse<UnknownObject>> {
     const url = this.getUrl(params.url);
 
     const response = await this.instance.patch(
@@ -102,7 +112,9 @@ class AxiosHelper {
     };
   }
 
-  public async delete(params: PostParams): Promise<HttpResponse<any>> {
+  public async delete(
+    params: PostParams,
+  ): Promise<HttpResponse<UnknownObject>> {
     const url = this.getUrl(params.url);
 
     const response = await this.instance.delete(url, {
