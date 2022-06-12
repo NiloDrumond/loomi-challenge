@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import { useAuth } from 'hooks/auth/useAuth';
 import AppLayout from 'components/AppLayout';
 import UserProvider from 'hooks/user/User.provider';
@@ -14,7 +14,9 @@ const AuthenticatedRoute: React.FC = ({ children }) => {
 
   return (
     <UserProvider>
-      <AppLayout>{children}</AppLayout>
+      <AppLayout>
+        <Outlet />
+      </AppLayout>
     </UserProvider>
   );
 };
