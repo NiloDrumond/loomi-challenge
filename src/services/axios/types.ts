@@ -1,3 +1,7 @@
+export type ApiConfig = {
+  baseUrl: string;
+};
+
 export type HttpResponse<T> = {
   statusCode: number;
   body: T;

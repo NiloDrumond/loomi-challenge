@@ -6,6 +6,7 @@ import '@fontsource/ubuntu/700.css';
 
 import { ChakraProvider } from '@chakra-ui/react';
 import { outlineWithTabOnly } from 'styles/utils/outlineWithTabOnly';
+import AuthProvider from 'hooks/auth/Auth.provider';
 import theme from './styles';
 import AppRoutes from './routes';
 
@@ -15,7 +16,9 @@ const App = () => {
   return (
     <>
       <ChakraProvider theme={theme}>
-        <AppRoutes />
+        <AuthProvider>
+          <AppRoutes />
+        </AuthProvider>
       </ChakraProvider>
     </>
   );

@@ -13,8 +13,11 @@ import {
 import { FiLogOut, FiUser } from 'react-icons/fi';
 import UserProfile from 'components/UserProfile';
 import { hoverOnBlack } from 'styles/utils/hoverOnBlack';
+import { useAuth } from 'hooks/auth/useAuth';
 
 const HeaderActions: React.FC = () => {
+  const { signOut } = useAuth();
+
   return (
     <Popover placement="bottom-end" offset={[10, 30]}>
       <PopoverTrigger>
@@ -47,6 +50,7 @@ const HeaderActions: React.FC = () => {
               w="100%"
               justifyContent="flex-start"
               {...hoverOnBlack()}
+              onClick={signOut}
             >
               Sair
             </Button>

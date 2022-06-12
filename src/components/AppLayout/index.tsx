@@ -17,7 +17,7 @@ const AppLayout: React.FC = ({ children }) => {
       <Header />
       <Flex overflow="hidden" position="relative" flex={1}>
         <BackgroundBox />
-        <HStack flex={1} alignItems="flex-start" px={8} spacing={8}>
+        <HStack flex={1} alignItems="flex-start" pl={8} spacing={8}>
           <Sidebar />
           <Flex
             flex={1}
@@ -25,6 +25,7 @@ const AppLayout: React.FC = ({ children }) => {
             overflowY="scroll"
             overflowX="hidden"
             maxH="100%"
+            pr={8}
           >
             {children}
           </Flex>
