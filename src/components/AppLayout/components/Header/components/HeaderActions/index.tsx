@@ -9,22 +9,31 @@ import {
   Button,
   VStack,
   Divider,
+  Spinner,
+  Avatar,
 } from '@chakra-ui/react';
 import { FiLogOut, FiUser } from 'react-icons/fi';
 import UserProfile from 'components/UserProfile';
 import { hoverOnBlack } from 'styles/utils/hoverOnBlack';
 import { useAuth } from 'hooks/auth/useAuth';
+import { useUser } from 'hooks/user/useUser';
 
 const HeaderActions: React.FC = () => {
   const { signOut } = useAuth();
+  const { userData } = useUser();
 
-  return (
+  return userData ? (
     <Popover placement="bottom-end" offset={[10, 30]}>
       <PopoverTrigger>
-        <IconButton
-          icon={<UserProfile name="Eduardo" avatarOnly />}
-          aria-label=""
-        />
+        <Button
+          size="lg"
+          px={2}
+          fontSize="md"
+          fontWeight={500}
+          rightIcon={<Avatar w={10} h={10} src={userData.avatar} />}
+        >
+          {userData.name}
+        </Button>
       </PopoverTrigger>
       <PopoverContent
         borderColor="main.400"
@@ -58,6 +67,8 @@ const HeaderActions: React.FC = () => {
         </PopoverBody>
       </PopoverContent>
     </Popover>
+  ) : (
+    <Spinner />
   );
 };
 

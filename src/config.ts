@@ -1,7 +1,7 @@
 const API = {
   BASE_URL: 'https://628bf017667aea3a3e387e51.mockapi.io',
   LOGIN_URL: '/login',
-  PROFILE_URL: '/me',
+  USER_URL: '/me',
   PRODUCT_URL: '/products',
   CONVERSIONS_RESUME_URL: '/conversions-resume',
   USERS_RESUME_URL: '/users-resume',

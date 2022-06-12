@@ -19,7 +19,8 @@ import Logo from 'assets/logo-icon.svg';
 import BackgroundBox from 'components/BackgroundBox';
 import { useAuth } from 'hooks/auth/useAuth';
 import { yup } from 'services/validations';
-import { useOnEnterPressed } from 'styles/utils/useOnEnterPressed';
+import { useOnEnterPressed } from 'utils/useOnEnterPressed';
+import { Navigate, useLocation } from 'react-router-dom';
 import { LoginForm } from './Login.types';
 
 const schema = yup
@@ -30,7 +31,8 @@ const schema = yup
   .required();
 
 const Login: React.FC = () => {
-  const { signIn, isLoading } = useAuth();
+  const { signIn, isLoading, token } = useAuth();
+  const location = useLocation();
   const {
     register,
     handleSubmit,
@@ -47,6 +49,10 @@ const Login: React.FC = () => {
   );
 
   useOnEnterPressed(handleSubmit(onSubmit));
+
+  if (token) {
+    return <Navigate to="/app" state={{ from: location }} replace />;
+  }
 
   return (
     <Center position="relative" flex={1}>

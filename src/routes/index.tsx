@@ -1,24 +1,24 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
+import AddProduct from 'pages/AddProduct';
+import Home from 'pages/Home';
+import Logistics from 'pages/Logistics';
 import Login from '../pages/Login';
-import AuthenticatedRoutes from './AuthenticatedRoutes';
 import { useAuth } from '../hooks/auth/useAuth';
+import AuthenticatedRoute from './AuthenticatedRoutes';
 
 const AppRoutes: React.FC = () => {
-  const { isAuthenticated } = useAuth();
+  const { token } = useAuth();
 
   return (
     <Routes>
       <Route path="login" element={<Login />} />
-      <Route path="app" element={<AuthenticatedRoutes />}>
-        <Route index />
-        <Route path="catalog" />
-        <Route path="logistics" />
+      <Route path="app" element={<AuthenticatedRoute />}>
+        <Route index element={<Home />} />
+        <Route path="catalog" element={<AddProduct />} />
+        <Route path="logistics" element={<Logistics />} />
       </Route>
-      <Route
-        path="*"
-        element={<Navigate to={isAuthenticated ? '/app' : '/login'} />}
-      />
+      <Route path="*" element={<Navigate to={token ? '/app' : '/login'} />} />
     </Routes>
   );
 };

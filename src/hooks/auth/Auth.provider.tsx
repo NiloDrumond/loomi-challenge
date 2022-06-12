@@ -64,9 +64,7 @@ const AuthProvider: React.FC = ({ children }) => {
   }, [authSuccess, token]);
 
   return (
-    <AuthContext.Provider
-      value={{ signIn, signOut, isLoading, isAuthenticated: !!token }}
-    >
+    <AuthContext.Provider value={{ signIn, signOut, isLoading, token }}>
       {children}
     </AuthContext.Provider>
   );

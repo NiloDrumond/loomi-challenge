@@ -29,7 +29,7 @@ const theme = extendTheme(
           boxSizing: 'border-box',
         },
         'body.using-mouse *:focus': {
-          'box-shadow': 'none !important',
+          boxShadow: 'none !important',
         },
       }),
     },

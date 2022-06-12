@@ -11,9 +11,9 @@ export interface AuthContextData {
   signIn: (data: SignInData) => Promise<void>;
   signOut: () => void;
   isLoading: boolean;
-  isAuthenticated: boolean;
+  token?: string;
 }
 
-export interface AuthenticatedContextData extends AuthContextData {
+export interface UseAuthenticatedData extends AuthContextData {
   token: string;
 }
