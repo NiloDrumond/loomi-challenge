@@ -3,6 +3,8 @@ import { fetchUserService } from './User.services';
 
 import { UserContextData, UserData } from './User.types';
 
+const USER_STORAGE_KEY = '@Loomi.Challenge:userData';
+
 export const UserContext = React.createContext<UserContextData>(
   {} as UserContextData,
 );
@@ -13,13 +15,13 @@ const UserProvider: React.FC = ({ children }) => {
   );
 
   React.useEffect(() => {
-    const raw = localStorage.getItem('userData');
+    const raw = localStorage.getItem(USER_STORAGE_KEY);
     if (raw) {
       setUserData(JSON.parse(raw));
     } else {
       fetchUserService().then(data => {
         setUserData(data);
-        localStorage.setItem('userData', JSON.stringify(data));
+        localStorage.setItem(USER_STORAGE_KEY, JSON.stringify(data));
       });
     }
   }, []);

@@ -9,6 +9,8 @@ import { AuthContextData, SignInData } from './Auth.types';
 
 const cookies = new Cookies();
 
+const TOKEN_COOKIE_KEY = '@Loomi.Challenge:token';
+
 export const AuthContext = React.createContext<AuthContextData>(
   {} as AuthContextData,
 );
@@ -34,7 +36,7 @@ const AuthProvider: React.FC = ({ children }) => {
       setIsLoading(true);
       try {
         const accessToken = await signInService(data);
-        cookies.set('token', accessToken);
+        cookies.set(TOKEN_COOKIE_KEY, accessToken);
         authSuccess(accessToken);
         setIsLoading(false);
       } catch (e) {
@@ -52,12 +54,12 @@ const AuthProvider: React.FC = ({ children }) => {
 
   const signOut = React.useCallback(() => {
     setToken(undefined);
-    cookies.remove('token');
+    cookies.remove(TOKEN_COOKIE_KEY);
     api.clearToken();
   }, []);
 
   React.useEffect(() => {
-    const accessToken = cookies.get('token');
+    const accessToken = cookies.get(TOKEN_COOKIE_KEY);
     if (accessToken && !token) {
       authSuccess(accessToken);
     }
