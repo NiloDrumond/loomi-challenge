@@ -4,6 +4,7 @@ import Overview from './components/Overview';
 import ConversionFunnel from './components/ConversionFunnel';
 import UsersProfile from './components/UsersProfile';
 import Sales from './components/Sales';
+import ProductsList from './components/ProductsList';
 
 const Home: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const Home: React.FC = () => {
         Perfil do usuário
       </Heading>
       <UsersProfile />
+      <ProductsList />
     </VStack>
   );
 };

@@ -14,7 +14,7 @@ import { useForm } from 'react-hook-form';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import PasswordInput from 'components/PasswordInput';
+import PasswordInput from 'components/forms/PasswordInput';
 import Logo from 'assets/logo-icon.svg';
 import BackgroundBox from 'components/BackgroundBox';
 import { useAuth } from 'hooks/auth/useAuth';
