@@ -1,12 +1,28 @@
-/* eslint-disable react/no-unescaped-entities */
-import { Center, Text } from '@chakra-ui/react';
 import React from 'react';
+import { Heading, VStack } from '@chakra-ui/react';
+import Overview from './components/Overview';
+import ConversionFunnel from './components/ConversionFunnel';
+import UsersProfile from './components/UsersProfile';
+import Sales from './components/Sales';
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
-    <Center flex={1}>
-      <Text>Home</Text>
-    </Center>
+    <VStack mb={10} flex={1} alignItems="flex-start" spacing={6}>
+      <Heading fontSize="2xl">Início</Heading>
+      <Overview />
+      <Heading color="brand.main" fontSize="xl">
+        Dashboard de vendas
+      </Heading>
+      <Sales />
+      <Heading color="brand.main" fontSize="xl">
+        Funil de conversão
+      </Heading>
+      <ConversionFunnel />
+      <Heading color="brand.main" fontSize="xl">
+        Perfil do usuário
+      </Heading>
+      <UsersProfile />
+    </VStack>
   );
 };
 

@@ -7,7 +7,7 @@ import HeaderNotifications from './components/HeaderNotifications';
 const Header: React.FC = () => {
   return (
     <HStack
-      boxShadow="0px 3px 6px #00000014"
+      boxShadow="md"
       px={10}
       py={4}
       zIndex={1}

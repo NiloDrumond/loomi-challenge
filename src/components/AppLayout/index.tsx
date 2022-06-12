@@ -7,13 +7,25 @@ import Header from './components/Header';
 
 const AppLayout: React.FC = ({ children }) => {
   return (
-    <Flex flexDirection="column" flex={1}>
+    <Flex
+      maxW="100vw"
+      overflow="hidden"
+      maxH="100vh"
+      flexDirection="column"
+      flex={1}
+    >
       <Header />
-      <Flex position="relative" flex={1}>
+      <Flex overflow="hidden" position="relative" flex={1}>
         <BackgroundBox />
-        <HStack flex={1} alignItems="flex-start" p={8} spacing={8}>
+        <HStack flex={1} alignItems="flex-start" px={8} spacing={8}>
           <Sidebar />
-          <Flex flex={1} h="100%">
+          <Flex
+            flex={1}
+            py={8}
+            overflowY="scroll"
+            overflowX="hidden"
+            maxH="100%"
+          >
             {children}
           </Flex>
         </HStack>

@@ -6,7 +6,7 @@ function outlineWithTabOnly() {
   });
 
   // Re-enable focus styling when Tab is pressed
-  document.body.addEventListener('keydown', (event) => {
+  document.body.addEventListener('keydown', event => {
     if (event.key === 'Tab') {
       document.body.classList.remove('using-mouse');
     }

@@ -7,8 +7,7 @@
     "airbnb",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "plugin:react/recommended",
-    "prettier/@typescript-eslint"
+    "plugin:react/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -26,6 +25,7 @@
     "consistent-return": "off",
     "no-param-reassign": "off",
     "no-use-before-define": "off",
+    "arrow-parens": "off",
     "prettier/prettier": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
