@@ -7,8 +7,9 @@ import {
   InputRightElement,
 } from '@chakra-ui/react';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
+import { PasswordInputProps } from './PasswordInput.types';
 
-function PasswordInput() {
+function PasswordInput({ registerReturn }: PasswordInputProps) {
   const [show, setShow] = React.useState(false);
 
   return (
@@ -17,6 +18,7 @@ function PasswordInput() {
         pr="4.5rem"
         type={show ? 'text' : 'password'}
         placeholder="Digite sua senha"
+        {...registerReturn}
       />
       <InputRightElement width="4.5rem">
         <IconButton
