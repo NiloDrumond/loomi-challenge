@@ -19,7 +19,13 @@ const AppLayout: React.FC = ({ children }) => {
         <BackgroundBox />
         <HStack flex={1} alignItems="flex-start" px={8} spacing={8}>
           <Sidebar />
-          <Flex flex={1} py={8} overflow="scroll" maxH="100%">
+          <Flex
+            flex={1}
+            py={8}
+            overflowY="scroll"
+            overflowX="hidden"
+            maxH="100%"
+          >
             {children}
           </Flex>
         </HStack>

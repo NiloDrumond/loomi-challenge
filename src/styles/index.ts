@@ -2,6 +2,7 @@ import { ChakraTheme, extendTheme, withDefaultVariant } from '@chakra-ui/react';
 import { colors } from './theme/colors';
 import { forms } from './forms';
 import { typography } from './typography';
+import { charts } from './charts';
 
 const theme = extendTheme(
   {
@@ -16,6 +17,7 @@ const theme = extendTheme(
     styles: {
       global: () => ({
         // ...defaultTheme.styles,
+        ...charts,
         'body > #root': {
           height: '100vh',
           width: '100vw',

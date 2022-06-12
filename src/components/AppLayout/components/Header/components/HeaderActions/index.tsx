@@ -28,7 +28,7 @@ const HeaderActions: React.FC = () => {
         borderWidth="1px"
         borderRadius="xl"
         bg="main.300"
-        color="brand.100"
+        color="brand.light"
         w="30"
       >
         <PopoverBody>

@@ -33,7 +33,7 @@ const AddProduct: React.FC = () => {
         <Button bg="main.100" variant="solid">
           Cancelar
         </Button>
-        <Button bg="brand.200" variant="solid">
+        <Button bg="brand.confirm" variant="solid">
           Criar
         </Button>
       </HStack>

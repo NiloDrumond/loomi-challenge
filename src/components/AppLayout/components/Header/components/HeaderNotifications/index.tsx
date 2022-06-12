@@ -25,7 +25,7 @@ const HeaderNotifications: React.FC = () => {
         borderRadius="xl"
         p={4}
         bg="main.300"
-        color="brand.100"
+        color="brand.light"
       >
         <PopoverArrow
           transform="scale(0.6, 1) rotate(45deg) !important"
