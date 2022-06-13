@@ -45,7 +45,7 @@ const TableItemDetails: React.FC<TableItemDetailsProps> = ({ product }) => {
         {enabled ? (
           <>
             <Text fontSize="lg">Ativo</Text>
-            <Icon w={6} h={6} color="brand.500" as={FiCheck} />
+            <Icon w={6} h={6} color="brand.main" as={FiCheck} />
           </>
         ) : (
           <>
