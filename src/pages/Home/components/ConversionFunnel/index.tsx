@@ -1,71 +1,92 @@
 import React from 'react';
 import { Wrap, WrapItem } from '@chakra-ui/react';
-import DashboardCard from 'components/DashboardCard';
+import useSWR from 'swr';
+import { API } from 'config';
+import { useSWRFetcher } from 'utils/useSWRFetcher';
+import { parseResponse } from './ConversionFunnel.utils';
+import { ConversionFunnelData } from './ConversionFunnel.types';
+import NumericCard from '../NumericCard';
+import ConversionFunnelSkeleton from './ConversionFunnel.Skeleton';
 
 const ConversionFunnel: React.FC = () => {
-  return (
+  const fetcher = useSWRFetcher<ConversionFunnelData>({
+    parser: parseResponse,
+  });
+  const { data } = useSWR(API.CONVERSIONS_RESUME_URL, fetcher);
+
+  return !data ? (
+    <ConversionFunnelSkeleton />
+  ) : (
     <Wrap spacing={8}>
       <WrapItem w="60">
-        <DashboardCard
+        <NumericCard
           header="Sessões"
-          colorScheme="teal"
-          extraInfo="+ 15 %"
-          description="em relação a ontem"
-          footer={{ main: '2.053', suffix: 'visualizações' }}
+          data={data.totalPerDay}
+          inRelationTo="day"
+          footer={value => ({
+            main: value.toString(),
+            suffix: 'visualizações',
+          })}
         />
       </WrapItem>
       <WrapItem w="60">
-        <DashboardCard
+        <NumericCard
           header="Visualizações de produto"
-          colorScheme="teal"
-          extraInfo="+ 15 %"
-          description="em relação a julho"
-          footer={{ main: '838', suffix: 'visualizações' }}
+          data={data.productsViewPerMonth}
+          footer={value => ({
+            main: value.toString(),
+            suffix: 'visualizações',
+          })}
         />
       </WrapItem>
       <WrapItem w="60">
-        <DashboardCard
+        <NumericCard
           header="Conversão para a página de produtos"
-          colorScheme="teal"
-          extraInfo="+ 15 %"
-          description="em relação a julho"
-          footer={{ main: '40', suffix: '%' }}
+          data={data.productPageConversionPerMonth}
+          footer={value => ({
+            main: value.toString(),
+            suffix: '%',
+          })}
         />
       </WrapItem>
       <WrapItem w="60">
-        <DashboardCard
+        <NumericCard
           header="Adições ao Carrinho"
-          colorScheme="teal"
-          extraInfo="+ 15 %"
-          description="em relação a julho"
-          footer={{ main: '8', suffix: 'produtos' }}
+          data={data.addToCartPerMonth}
+          footer={value => ({
+            main: value.toString(),
+            suffix: 'produtos',
+          })}
         />
       </WrapItem>
       <WrapItem w="60">
-        <DashboardCard
+        <NumericCard
           header="Checkout - Frete"
-          colorScheme="teal"
-          extraInfo="+ 15 %"
-          description="em relação a julho"
-          footer={{ main: '10', suffix: 'usuários' }}
+          data={data.checkoutShippingPerMonth}
+          footer={value => ({
+            main: value.toString(),
+            suffix: 'usuários',
+          })}
         />
       </WrapItem>
       <WrapItem w="60">
-        <DashboardCard
+        <NumericCard
           header="Checkout - E-mail"
-          colorScheme="teal"
-          extraInfo="+ 15 %"
-          description="em relação a julho"
-          footer={{ main: '10', suffix: 'usuários' }}
+          data={data.checkoutEmailPerMonth}
+          footer={value => ({
+            main: value.toString(),
+            suffix: 'usuários',
+          })}
         />
       </WrapItem>
       <WrapItem w="60">
-        <DashboardCard
+        <NumericCard
           header="Checkout - Cadastro"
-          colorScheme="teal"
-          extraInfo="+ 15 %"
-          description="em relação a julho"
-          footer={{ main: '10', suffix: 'usuários' }}
+          data={data.checkoutEmailPerMonth}
+          footer={value => ({
+            main: value.toString(),
+            suffix: 'usuários',
+          })}
         />
       </WrapItem>
     </Wrap>

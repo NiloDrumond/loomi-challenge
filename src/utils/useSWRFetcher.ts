@@ -3,24 +3,30 @@ import React from 'react';
 import api from 'services/axios';
 import { validCode } from './validCode';
 
-export type SWRFetcherParams = {
-  url: string;
+export type SWRFetcherConfig<T> = {
   validateCode?: (code: number) => boolean;
+  parser?: (data: unknown) => T;
 };
 
-function useSWRFetcher<T>() {
+function useSWRFetcher<T>(config?: SWRFetcherConfig<T>) {
   const toast = useToast();
 
+  const parser = React.useMemo(() => {
+    if (config && config.parser) return config.parser;
+    return undefined;
+  }, [config]);
+
+  const validateCode = React.useMemo(() => {
+    if (config && config.validateCode) return config.validateCode;
+    return validCode;
+  }, [config]);
+
   const fetcher = React.useCallback(
-    async ({ url, validateCode }: SWRFetcherParams) => {
+    async (url: string) => {
       const response = await api.get<T>({ url });
 
-      if (
-        validateCode
-          ? validateCode(response.statusCode)
-          : validCode(response.statusCode)
-      ) {
-        return response.body;
+      if (validateCode(response.statusCode)) {
+        return parser ? parser(response.body) : response.body;
       }
       toast({
         title: 'Falha ao carregar esses dados',
@@ -28,7 +34,7 @@ function useSWRFetcher<T>() {
         isClosable: true,
       });
     },
-    [toast],
+    [toast, parser, validateCode],
   );
 
   return fetcher;

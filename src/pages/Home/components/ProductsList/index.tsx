@@ -29,9 +29,7 @@ const ProductsList: React.FC = () => {
     `${API.PRODUCTS_URL}?page=${page}&limit=7${
       searchQuery.length > 0 ? `&search=${searchQuery}` : ''
     }`,
-    url => {
-      return fetcher({ url });
-    },
+    fetcher,
   );
 
   const onSearch = React.useCallback((value: string) => {
@@ -43,7 +41,7 @@ const ProductsList: React.FC = () => {
     if (!data)
       return (
         <Box pt="10">
-          <Spinner size="xl" color="brand.main" />
+          <Spinner />
         </Box>
       );
     if (data.length === 0) return <NoContent />;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Heading, VStack } from '@chakra-ui/react';
 import Overview from './components/Overview';
 import ConversionFunnel from './components/ConversionFunnel';
-import UsersProfile from './components/UsersProfile';
+import UsersResume from './components/UsersResume';
 import Sales from './components/Sales';
 import ProductsList from './components/ProductsList';
 
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
       <Heading color="brand.main" fontSize="xl">
         Perfil do usuário
       </Heading>
-      <UsersProfile />
+      <UsersResume />
       <ProductsList />
     </VStack>
   );

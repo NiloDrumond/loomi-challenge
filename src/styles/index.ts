@@ -3,6 +3,7 @@ import { colors } from './theme/colors';
 import { forms } from './forms';
 import { typography } from './typography';
 import { charts } from './charts';
+import { feedback } from './feedback';
 
 const theme = extendTheme(
   {
@@ -13,6 +14,7 @@ const theme = extendTheme(
     components: {
       ...forms,
       ...typography,
+      ...feedback,
     },
     styles: {
       global: () => ({
