@@ -8,7 +8,7 @@ import { NumericCardData } from 'pages/Home/components/NumericCard/NumericCard.t
 
 const MonthlyTicket: React.FC = () => {
   const fetcher = useSWRFetcher<NumericCardData>();
-  const { data } = useSWR(API.AVG_TICKET_MONTH, url => fetcher({ url }));
+  const { data } = useSWR(API.AVG_TICKET_MONTH, fetcher);
 
   return (
     <NumericCard

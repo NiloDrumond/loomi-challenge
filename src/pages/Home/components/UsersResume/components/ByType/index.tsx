@@ -1,22 +1,19 @@
 /* eslint-disable no-useless-concat */
 import React from 'react';
-import { Box, useTheme } from '@chakra-ui/react';
+import { Box, Center, Spinner, useTheme } from '@chakra-ui/react';
 import ApexCharts from 'apexcharts';
 import ReactApexChart, { Props } from 'react-apexcharts';
-
-const MOCK_DATA = [70999, 83421];
+import { ByTypeProps } from './ByType.types';
 
 // The typing of react-apexcharts is still class-based
 const Chart = ReactApexChart as unknown as (params: Props) => JSX.Element;
 
-const ByGenderChart: React.FC = () => {
+const ByGender = ({ data }: ByTypeProps) => {
   const { colors } = useTheme();
-
-  const data = MOCK_DATA;
 
   const options = React.useMemo<ApexCharts.ApexOptions>(() => {
     return {
-      labels: ['Cliente retornando', 'Novo cliente'],
+      labels: ['Novo cliente', 'Cliente retornando'],
       chart: {
         type: 'donut',
       },
@@ -59,7 +56,7 @@ const ByGenderChart: React.FC = () => {
           offsetX: -4,
         },
       },
-      colors: [colors.charts.green, colors.charts.teal],
+      colors: [colors.charts.teal, colors.charts.green],
       plotOptions: {
         pie: {
           expandOnClick: false,
@@ -72,10 +69,10 @@ const ByGenderChart: React.FC = () => {
   }, [colors]);
 
   const series = React.useMemo<ApexNonAxisChartSeries>(() => {
-    return data;
+    return data || [];
   }, [data]);
 
-  return (
+  return data ? (
     <Box id="chart">
       <Chart
         options={options}
@@ -85,7 +82,11 @@ const ByGenderChart: React.FC = () => {
         width={500}
       />
     </Box>
+  ) : (
+    <Center>
+      <Spinner />
+    </Center>
   );
 };
 
-export default ByGenderChart;
+export default ByGender;

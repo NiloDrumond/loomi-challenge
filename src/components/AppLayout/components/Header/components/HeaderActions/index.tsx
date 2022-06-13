@@ -66,7 +66,7 @@ const HeaderActions: React.FC = () => {
       </PopoverContent>
     </Popover>
   ) : (
-    <Spinner />
+    <Spinner size="md" />
   );
 };
 

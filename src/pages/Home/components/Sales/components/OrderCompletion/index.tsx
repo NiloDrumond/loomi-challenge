@@ -1,16 +1,31 @@
 import React from 'react';
-import { Box, HStack, Select, Text, useTheme } from '@chakra-ui/react';
+import {
+  Box,
+  Center,
+  HStack,
+  Select,
+  Spinner,
+  Text,
+  useTheme,
+} from '@chakra-ui/react';
 import Card from 'components/Card';
 import ReactApexChart, { Props } from 'react-apexcharts';
-
-const MOCK_DATA = [10, 1, 3, 4, 2, 5, 6, 4, 5, 6, 12, 1];
-const MOCK_DATA_2 = [8, 4, 2, 2, 7, 5, 3, 5, 1, 7, 11, 4];
+import { API } from 'config';
+import useSWR from 'swr';
+import { useSWRFetcher } from 'utils/useSWRFetcher';
+import { mapToValue } from 'utils/mapToValue';
 
 // The typing of react-apexcharts is still class-based
 const Chart = ReactApexChart as unknown as (params: Props) => JSX.Element;
 
 const OrderCompletion: React.FC = () => {
   const { colors } = useTheme();
+
+  const fetcher = useSWRFetcher<number[]>({
+    parser: mapToValue,
+  });
+  const { data: completed } = useSWR(API.ORDERS_CHART_URL, fetcher);
+  const { data: canceled } = useSWR(API.CANCELED_ORDERS_CHART_URL, fetcher);
 
   const options = React.useMemo<ApexCharts.ApexOptions>(() => {
     return {
@@ -114,19 +129,24 @@ const OrderCompletion: React.FC = () => {
   const series = React.useMemo<ApexAxisChartSeries>(() => {
     return [
       {
-        data: MOCK_DATA,
+        data: completed || [],
         color: colors.charts.darkGreen,
         type: 'column',
         name: 'Realizados',
       },
       {
-        data: MOCK_DATA_2,
+        data: canceled || [],
         color: colors.charts.orange,
         type: 'column',
         name: 'Cancelados',
       },
     ];
-  }, [colors]);
+  }, [colors, completed, canceled]);
+
+  const hasLoaded = React.useMemo(
+    () => completed && canceled,
+    [completed, canceled],
+  );
 
   return (
     <Card>
@@ -138,15 +158,21 @@ const OrderCompletion: React.FC = () => {
           <option value="year">Ano</option>
         </Select>
       </HStack>
-      <Box id="chart" className="overlap">
-        <Chart
-          options={options}
-          series={series}
-          type="bar"
-          width={550}
-          height={350}
-        />
-      </Box>
+      {hasLoaded ? (
+        <Box id="chart" className="overlap">
+          <Chart
+            options={options}
+            series={series}
+            type="bar"
+            width={550}
+            height={350}
+          />
+        </Box>
+      ) : (
+        <Center width={550} height={350}>
+          <Spinner />
+        </Center>
+      )}
     </Card>
   );
 };

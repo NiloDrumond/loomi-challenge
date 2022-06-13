@@ -21,7 +21,7 @@ const DashboardCard = ({
       {header && <Text fontWeight={700}>{header}</Text>}
       {isLoading ? (
         <Center w="100%" h="100%">
-          <Spinner size="lg" color="brand.main" />
+          <Spinner />
         </Center>
       ) : (
         <>

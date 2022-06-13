@@ -1,16 +1,27 @@
 import React from 'react';
-import { Box, HStack, Select, Text, useTheme } from '@chakra-ui/react';
+import {
+  Box,
+  Center,
+  HStack,
+  Select,
+  Spinner,
+  Text,
+  useTheme,
+} from '@chakra-ui/react';
 import Card from 'components/Card';
 import ReactApexChart, { Props } from 'react-apexcharts';
-
-const MOCK_DATA = [10, 1, 3, 4, 2, 5, 6, 4, 5, 6, 12, 1];
+import useSWR from 'swr';
+import { useSWRFetcher } from 'utils/useSWRFetcher';
+import { API } from 'config';
+import { mapToValue } from 'utils/mapToValue';
 
 // The typing of react-apexcharts is still class-based
 const Chart = ReactApexChart as unknown as (params: Props) => JSX.Element;
 
-const OrdersByMonth: React.FC = () => {
+const OrdersPerMonth: React.FC = () => {
   const { colors } = useTheme();
-  const data = MOCK_DATA;
+  const fetcher = useSWRFetcher<number[]>({ parser: mapToValue });
+  const { data } = useSWR(API.SELLS_CHART_URL, fetcher);
 
   const options = React.useMemo<ApexCharts.ApexOptions>(() => {
     return {
@@ -101,7 +112,7 @@ const OrdersByMonth: React.FC = () => {
   const series = React.useMemo<ApexAxisChartSeries>(() => {
     return [
       {
-        data,
+        data: data || [],
         color: colors.charts.black,
       },
     ];
@@ -117,17 +128,23 @@ const OrdersByMonth: React.FC = () => {
           <option value="year">Ano</option>
         </Select>
       </HStack>
-      <Box id="chart">
-        <Chart
-          options={options}
-          series={series}
-          type="bar"
-          width={500}
-          height={350}
-        />
-      </Box>
+      {data ? (
+        <Box id="chart">
+          <Chart
+            options={options}
+            series={series}
+            type="bar"
+            width={500}
+            height={350}
+          />
+        </Box>
+      ) : (
+        <Center width={500} height={350}>
+          <Spinner />
+        </Center>
+      )}
     </Card>
   );
 };
 
-export default OrdersByMonth;
+export default OrdersPerMonth;

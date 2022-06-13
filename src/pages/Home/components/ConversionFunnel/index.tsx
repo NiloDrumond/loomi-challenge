@@ -9,10 +9,10 @@ import NumericCard from '../NumericCard';
 import ConversionFunnelSkeleton from './ConversionFunnel.Skeleton';
 
 const ConversionFunnel: React.FC = () => {
-  const fetcher = useSWRFetcher<ConversionFunnelData>();
-  const { data } = useSWR(API.CONVERSIONS_RESUME_URL, url =>
-    fetcher({ url, parser: parseResponse }),
-  );
+  const fetcher = useSWRFetcher<ConversionFunnelData>({
+    parser: parseResponse,
+  });
+  const { data } = useSWR(API.CONVERSIONS_RESUME_URL, fetcher);
 
   return !data ? (
     <ConversionFunnelSkeleton />

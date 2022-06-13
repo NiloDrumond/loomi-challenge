@@ -10,7 +10,7 @@ import AlertsSkeleton from './Alerts.Skeleton';
 
 const Alerts: React.FC = () => {
   const fetcher = useSWRFetcher<AlertData[]>();
-  const { data } = useSWR(API.ALERTS_URL, url => fetcher({ url }));
+  const { data } = useSWR(API.ALERTS_URL, fetcher);
 
   const { maintenance, lowStock } = React.useMemo<
     Record<string, AlertData | undefined>

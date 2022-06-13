@@ -7,7 +7,7 @@ import { NumericCardData } from 'pages/Home/components/NumericCard/NumericCard.t
 
 const MonthlyOrders: React.FC = () => {
   const fetcher = useSWRFetcher<NumericCardData>();
-  const { data } = useSWR(API.ORDERS_MONTH_URL, url => fetcher({ url }));
+  const { data } = useSWR(API.ORDERS_MONTH_URL, fetcher);
 
   return (
     <NumericCard

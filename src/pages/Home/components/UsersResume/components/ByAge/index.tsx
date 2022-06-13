@@ -1,19 +1,15 @@
 /* eslint-disable no-useless-concat */
 import React from 'react';
-import { Box, useTheme } from '@chakra-ui/react';
+import { Box, Center, Spinner, useTheme } from '@chakra-ui/react';
 import ApexCharts from 'apexcharts';
 import ReactApexChart, { Props } from 'react-apexcharts';
-import { getTickAmount } from './ByAgeChart.utils';
-
-const MOCK_DATA = [0, 1800, 2350, 2100, 750, 1200, 200];
+import { ByAgeProps } from './ByAge.types';
 
 // The typing of react-apexcharts is still class-based
 const Chart = ReactApexChart as unknown as (params: Props) => JSX.Element;
 
-const ByAgeChart: React.FC = () => {
+const ByAge = ({ data }: ByAgeProps) => {
   const { colors } = useTheme();
-
-  const data = MOCK_DATA;
 
   const options = React.useMemo<ApexCharts.ApexOptions>(() => {
     return {
@@ -57,7 +53,6 @@ const ByAgeChart: React.FC = () => {
       },
       xaxis: {
         categories: ['-18', '18-24', '25-34', '35-44', '45-52', '55-64', '65+'],
-        tickAmount: getTickAmount(data),
         labels: {
           show: true,
 
@@ -75,18 +70,19 @@ const ByAgeChart: React.FC = () => {
         },
       },
     };
-  }, [data]);
+  }, []);
 
   const series = React.useMemo<ApexAxisChartSeries>(() => {
     return [
       {
-        data,
+        // The api is sending float numbers as sessions, which don't make sense so I'm truncating
+        data: data ? data.map(d => Math.trunc(d)) : [],
         color: colors.charts.black,
       },
     ];
   }, [colors, data]);
 
-  return (
+  return data ? (
     <Box id="chart" className="horizontal">
       <Chart
         options={options}
@@ -96,7 +92,11 @@ const ByAgeChart: React.FC = () => {
         width={550}
       />
     </Box>
+  ) : (
+    <Center height={300} width={550}>
+      <Spinner />
+    </Center>
   );
 };
 
-export default ByAgeChart;
+export default ByAge;

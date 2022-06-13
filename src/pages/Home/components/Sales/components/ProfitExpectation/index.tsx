@@ -1,12 +1,21 @@
 import React from 'react';
-import { Box, HStack, Select, Text, useTheme } from '@chakra-ui/react';
+import {
+  Box,
+  Center,
+  HStack,
+  Select,
+  Spinner,
+  Text,
+  useTheme,
+} from '@chakra-ui/react';
 import Card from 'components/Card';
 import ReactApexChart, { Props } from 'react-apexcharts';
-
-const MOCK_DATA = [10, 1, 3, 4, 2, 5, 6, 4, 5, 6, 12, 1];
-const MOCK_DATA_2 = [8, 4, 2, 2, 7, 5, 3, 5, 1, 7, 11, 4];
-const MOCK_DATA_3 = [6, 4, 7, 10, 7, 5, 7, 5, 1, 7, 11, 4];
-const MOCK_DATA_4 = [1, 2, 7, 2, 2, 5, 3, 5, 13, 7, 11, 8];
+import { API } from 'config';
+import useSWR from 'swr';
+import { useSWRFetcher } from 'utils/useSWRFetcher';
+import { reaisLocale } from 'utils/reaisLocale';
+import { mapToValue } from 'utils/mapToValue';
+import { generateMock } from './ProfitExpectation.utils';
 
 const months = [
   'JAN',
@@ -27,6 +36,15 @@ const Chart = ReactApexChart as unknown as (params: Props) => JSX.Element;
 
 const ProfitExpectation: React.FC = () => {
   const { colors } = useTheme();
+
+  const mock = generateMock();
+
+  const fetcher = useSWRFetcher<number[]>({ parser: mapToValue });
+  const { data: real } = useSWR(API.PROFIT_CHART_URL, fetcher);
+  const { data: expectation } = useSWR(
+    API.PROFIT_EXPECTATION_CHART_URL,
+    fetcher,
+  );
 
   const options = React.useMemo<ApexCharts.ApexOptions>(() => {
     return {
@@ -121,7 +139,9 @@ const ProfitExpectation: React.FC = () => {
                     <span class="text">
                       R$
                       <span class="bold">
-                        ${series[0 + lastYear][dataPointIndex]}
+                        ${reaisLocale.format(
+                          series[0 + lastYear][dataPointIndex],
+                        )}
                       </span>
                     </span>
                   </div>
@@ -135,7 +155,9 @@ const ProfitExpectation: React.FC = () => {
                     <span class="text">
                       R$
                       <span class="bold">
-                        ${series[2 + lastYear][dataPointIndex]}
+                        ${reaisLocale.format(
+                          series[2 + lastYear][dataPointIndex],
+                        )}
                       </span>
                     </span>
                   </div>
@@ -149,31 +171,36 @@ const ProfitExpectation: React.FC = () => {
   const series = React.useMemo<ApexAxisChartSeries>(() => {
     return [
       {
-        data: MOCK_DATA,
+        data: real || [],
         color: colors.charts.teal,
         type: 'column',
         name: 'Real',
       },
       {
-        data: MOCK_DATA_2,
+        data: expectation || [],
         color: colors.charts.lightPink,
         type: 'column',
         name: 'Expectativa',
       },
       {
-        data: MOCK_DATA_3,
+        data: mock.real,
         color: colors.charts.black,
         type: 'line',
         name: 'Real do ano anterior',
       },
       {
-        data: MOCK_DATA_4,
+        data: mock.expectation,
         color: colors.charts.pink,
         type: 'line',
         name: 'Expectativa do ano anterior',
       },
     ];
-  }, [colors]);
+  }, [colors, real, expectation, mock]);
+
+  const hasLoaded = React.useMemo(
+    () => real && expectation,
+    [real, expectation],
+  );
 
   return (
     <Card>
@@ -185,15 +212,21 @@ const ProfitExpectation: React.FC = () => {
           <option value="year">Ano</option>
         </Select>
       </HStack>
-      <Box id="chart">
-        <Chart
-          options={options}
-          series={series}
-          type="bar"
-          width={650}
-          height={350}
-        />
-      </Box>
+      {hasLoaded ? (
+        <Box id="chart">
+          <Chart
+            options={options}
+            series={series}
+            type="bar"
+            width={650}
+            height={350}
+          />
+        </Box>
+      ) : (
+        <Center width={650} height={350}>
+          <Spinner />
+        </Center>
+      )}
     </Card>
   );
 };
