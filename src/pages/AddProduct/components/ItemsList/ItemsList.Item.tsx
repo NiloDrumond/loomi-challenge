@@ -6,19 +6,22 @@ import {
   Box,
   Input,
   Flex,
-  Center,
   Icon,
   IconButton,
   Select,
 } from '@chakra-ui/react';
 import FormSection from 'components/forms/FormSection';
 import FormInputWrapper from 'components/forms/FormInputWrapper';
-import { FiPlus, FiX } from 'react-icons/fi';
+import { FiX } from 'react-icons/fi';
 import WithAlert from 'components/WithAlert';
-import { AddProductItemProps } from './AddProduct.types';
-import { colors } from './AddProduct.data';
+import { Controller } from 'react-hook-form';
+import { colors } from 'pages/AddProduct/AddProduct.data';
+import UploadInput from 'components/forms/UploadInput';
+import { ItemsListItemProps } from './ItemsList.types';
 
-const AddProductItem: React.FC<AddProductItemProps> = ({ index }) => {
+const ItemsListItem = ({ index, remove, control }: ItemsListItemProps) => {
+  const { register } = control;
+
   const name = React.useMemo(() => {
     return String(index + 1).padStart(2, '0');
   }, [index]);
@@ -35,7 +38,7 @@ const AddProductItem: React.FC<AddProductItemProps> = ({ index }) => {
       >
         <WithAlert
           header={`Deletar item ${name}`}
-          onConfirm={() => null}
+          onConfirm={() => remove(index)}
           confirmLabel="Deletar"
           renderTrigger={({ onOpen }) => (
             <IconButton
@@ -58,34 +61,50 @@ const AddProductItem: React.FC<AddProductItemProps> = ({ index }) => {
       <HStack spacing={16} w="100%">
         <FormSection containerProps={{ minW: '400px' }}>
           <FormInputWrapper label="Codigo">
-            <Input />
+            <Input {...register(`items.${index}.code`)} />
           </FormInputWrapper>
           <FormInputWrapper label="Cor">
-            <Select>
-              {colors.map(({ label, value }) => (
-                // eslint-disable-next-line react/jsx-key
-                <option value={value}>{label}</option>
-              ))}
-            </Select>
+            <Controller
+              name={`items.${index}.color`}
+              render={({ field: { onChange, value } }) => (
+                <Select
+                  value={value}
+                  onChange={e =>
+                    onChange({
+                      target: {
+                        name: `items.${index}.color`,
+                        value: e.target.value,
+                      },
+                    })
+                  }
+                >
+                  {colors.map(({ label, value: v }) => (
+                    <option key={v} value={v}>
+                      {label}
+                    </option>
+                  ))}
+                </Select>
+              )}
+            />
           </FormInputWrapper>
           <FormInputWrapper label="Tamanho">
             <HStack spacing={2}>
               <HStack spacing={0.5}>
-                <Input />
+                <Input {...register(`items.${index}.size.length`)} />
                 <Text fontSize="sm" whiteSpace="nowrap">
                   m
                 </Text>
               </HStack>
               <Text fontWeight={600}>x</Text>
               <HStack spacing={0.5}>
-                <Input />
+                <Input {...register(`items.${index}.size.width`)} />
                 <Text fontSize="sm" whiteSpace="nowrap">
                   m
                 </Text>
               </HStack>
               <Text fontWeight={600}>x</Text>
               <HStack spacing={0.5}>
-                <Input />
+                <Input {...register(`items.${index}.size.height`)} />
                 <Text fontSize="sm" whiteSpace="nowrap">
                   m
                 </Text>
@@ -95,9 +114,8 @@ const AddProductItem: React.FC<AddProductItemProps> = ({ index }) => {
         </FormSection>
         <Flex flex={2}>
           <FormInputWrapper topAlign label="Imagens">
-            <Center bg="main.100" w="20" h="20">
-              <Icon as={FiPlus} />
-            </Center>
+            {/* I didn't bother to integrate with hook-form as it won't be going to the api anyway */}
+            <UploadInput />
           </FormInputWrapper>
         </Flex>
       </HStack>
@@ -105,4 +123,4 @@ const AddProductItem: React.FC<AddProductItemProps> = ({ index }) => {
   );
 };
 
-export default AddProductItem;
+export default ItemsListItem;

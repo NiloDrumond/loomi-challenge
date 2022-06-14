@@ -4,7 +4,7 @@ import { FiCheck, FiSlash } from 'react-icons/fi';
 
 import { TableItemDetailsProps } from './TableItem.types';
 
-const MOCK_SPECIFICATIONS = ['banco', 'sem braço', 'sem braço', 'de madeira'];
+const MOCK_SPECIFICATIONS = ['banco', 'sem braço', 'com braço', 'de madeira'];
 
 const TableItemDetails: React.FC<TableItemDetailsProps> = ({ product }) => {
   const enabled = Math.random() > 0.5;

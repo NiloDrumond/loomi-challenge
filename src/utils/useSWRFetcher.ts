@@ -29,6 +29,7 @@ function useSWRFetcher<T>(config?: SWRFetcherConfig<T>) {
         return parser ? parser(response.body) : response.body;
       }
       toast({
+        position: 'top-left',
         title: 'Falha ao carregar esses dados',
         status: 'error',
         isClosable: true,

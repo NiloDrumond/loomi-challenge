@@ -30,7 +30,7 @@ export const charts = {
     filter: 'drop-shadow(0px 0px 10px #00000026) ',
   },
 
-  '.overlap .apexcharts-series:nth-child(2) .apexcharts-bar-area': {
+  '.overlap .apexcharts-series:nth-of-type(even) .apexcharts-bar-area': {
     transform: 'translate(-4px, 0.5px)',
     zIndex: 1,
   },
