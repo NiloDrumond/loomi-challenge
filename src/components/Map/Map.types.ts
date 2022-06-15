@@ -10,3 +10,10 @@ export type ClickMapDataEvent = {
     clientY: number;
   };
 };
+
+export type MapCoordinates = {
+  lat: number;
+  lng: number;
+};
+
+export type MapType = 'satellite' | 'roadmap';
