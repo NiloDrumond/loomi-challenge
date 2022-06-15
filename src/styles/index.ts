@@ -1,7 +1,6 @@
 import { ChakraTheme, extendTheme, withDefaultVariant } from '@chakra-ui/react';
 import { colors } from './theme/colors';
 import { forms } from './forms';
-import { typography } from './typography';
 import { feedback } from './feedback';
 import { thirdParty } from './thirdParty';
 
@@ -14,12 +13,10 @@ const theme = extendTheme(
     },
     components: {
       ...forms,
-      ...typography,
       ...feedback,
     },
     styles: {
       global: () => ({
-        // ...defaultTheme.styles,
         ...thirdParty,
         'body > #root': {
           height: '100vh',

@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-concat */
 import React from 'react';
 import { Box, Center, Spinner, useTheme } from '@chakra-ui/react';
 import ApexCharts from 'apexcharts';

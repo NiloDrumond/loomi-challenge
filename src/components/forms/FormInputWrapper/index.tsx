@@ -20,9 +20,7 @@ const FormInputWrapper: React.FC<FormInputWrapperProps> = ({
     <FormControl {...controlProps}>
       <HStack alignItems={topAlign ? 'flex-start' : 'center'}>
         <Box w="28">
-          <Text color="main.300" mr={1}>
-            {label}:
-          </Text>
+          <Text mr={1}>{label}:</Text>
         </Box>
         <VStack flex={1} alignItems="flex-start">
           {children}

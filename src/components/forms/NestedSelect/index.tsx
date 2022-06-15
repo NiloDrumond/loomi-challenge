@@ -81,7 +81,7 @@ const NestedSelect = ({
           bg="brand.light"
         >
           <VStack w="100%" px={6} py={4} alignItems="flex-start">
-            <Text color="main.300" fontSize="lg" fontWeight={700}>
+            <Text fontSize="lg" fontWeight={700}>
               {selectTitle}
             </Text>
             <Accordion w="100%" borderWidth="0" allowToggle>
