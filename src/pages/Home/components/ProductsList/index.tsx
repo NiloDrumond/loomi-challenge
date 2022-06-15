@@ -46,7 +46,7 @@ const ProductsList: React.FC = () => {
         </Box>
       );
     if (data.length === 0) return <NoContent />;
-    return data.map(p => <TableItem key={p.id} product={p} />);
+    return data.map((p) => <TableItem key={p.id} product={p} />);
   }, [data]);
 
   return (
@@ -70,14 +70,14 @@ const ProductsList: React.FC = () => {
             <Text color="gray.400">{`${page} de 40`}</Text>
             <IconButton
               isDisabled={page === 1}
-              onClick={() => setPage(prev => prev - 1)}
+              onClick={() => setPage((prev) => prev - 1)}
               aria-label=""
               variant="solid"
               icon={<Icon w={6} h={6} as={FiChevronLeft} />}
             />
             <IconButton
               aria-label=""
-              onClick={() => setPage(prev => prev + 1)}
+              onClick={() => setPage((prev) => prev + 1)}
               variant="solid"
               icon={<Icon w={6} h={6} as={FiChevronRight} />}
             />

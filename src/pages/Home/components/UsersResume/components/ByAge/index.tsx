@@ -76,7 +76,7 @@ const ByAge = ({ data }: ByAgeProps) => {
     return [
       {
         // The api is sending float numbers as sessions, which don't make sense so I'm truncating
-        data: data ? data.map(d => Math.trunc(d)) : [],
+        data: data ? data.map((d) => Math.trunc(d)) : [],
         color: colors.charts.black,
       },
     ];

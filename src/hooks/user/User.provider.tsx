@@ -19,7 +19,7 @@ const UserProvider: React.FC = ({ children }) => {
     if (raw) {
       setUserData(JSON.parse(raw));
     } else {
-      fetchUserService().then(data => {
+      fetchUserService().then((data) => {
         setUserData(data);
         localStorage.setItem(USER_STORAGE_KEY, JSON.stringify(data));
       });

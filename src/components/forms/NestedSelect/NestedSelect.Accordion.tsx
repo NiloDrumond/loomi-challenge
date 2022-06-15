@@ -40,7 +40,7 @@ const NestedSelectAccordion = ({
             </AccordionButton>
             <AccordionPanel pl={10} pb={4}>
               <List spacing={2}>
-                {items.map(i => {
+                {items.map((i) => {
                   const isSelected = selected.includes(i.value);
                   return (
                     <ListItem key={i.value}>

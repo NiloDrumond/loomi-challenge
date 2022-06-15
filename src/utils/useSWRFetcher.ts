@@ -34,6 +34,7 @@ function useSWRFetcher<T>(config?: SWRFetcherConfig<T>) {
         status: 'error',
         isClosable: true,
       });
+      return undefined;
     },
     [toast, parser, validateCode],
   );

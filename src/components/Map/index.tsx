@@ -65,11 +65,11 @@ function Map() {
   );
 
   const handleZoomOut = React.useCallback(() => {
-    setZoom(prev => Math.max(MIN_ZOOM, prev - 1));
+    setZoom((prev) => Math.max(MIN_ZOOM, prev - 1));
   }, []);
 
   const handleZoomIn = React.useCallback(() => {
-    setZoom(prev => Math.min(MAX_ZOOM, prev + 1));
+    setZoom((prev) => Math.min(MAX_ZOOM, prev + 1));
   }, []);
 
   return isLoaded ? (
@@ -126,7 +126,7 @@ function Map() {
           minZoom: MIN_ZOOM,
           backgroundColor: 'white',
         }}
-        onLoad={map => {
+        onLoad={(map) => {
           loadRegions(map);
           map.data.setStyle({
             strokeWeight: 2,

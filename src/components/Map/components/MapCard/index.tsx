@@ -30,7 +30,7 @@ const MapCard = ({ containerRef }: MapCardProps) => {
         cardProps={{ px: 4, py: 4, minH: '11rem', h: '11rem', w: '15rem' }}
         header="Pedidos realizados no mês"
         data={data}
-        footer={value => ({ main: value.toString(), suffix: 'pedidos' })}
+        footer={(value) => ({ main: value.toString(), suffix: 'pedidos' })}
       />
     </Box>
   );

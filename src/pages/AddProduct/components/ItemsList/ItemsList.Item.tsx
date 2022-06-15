@@ -69,7 +69,7 @@ const ItemsListItem = ({ index, remove, control }: ItemsListItemProps) => {
               render={({ field: { onChange, value } }) => (
                 <Select
                   value={value}
-                  onChange={e =>
+                  onChange={(e) =>
                     onChange({
                       target: {
                         name: `items.${index}.color`,

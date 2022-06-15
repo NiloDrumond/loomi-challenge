@@ -9,15 +9,15 @@ const NestedSelectSelected = ({
   return (
     <VStack spacing={5} w="100%">
       {Object.entries(selected).map(([key, items]) => {
-        const parent = options.find(o => o.value === key);
-        if (!items || !parent) return;
+        const parent = options.find((o) => o.value === key);
+        if (!items || !parent) return <></>;
         return (
           <HStack alignItems="flex-start" spacing={4} w="100%" key={key}>
             <Text>{parent.label}</Text>
             <Wrap spacing={3}>
-              {items.map(item => {
-                const child = parent.items.find(i => i.value === item);
-                if (!child) return;
+              {items.map((item) => {
+                const child = parent.items.find((i) => i.value === item);
+                if (!child) return <></>;
                 return (
                   <WrapItem key={item}>
                     <Tag

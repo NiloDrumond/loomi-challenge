@@ -25,7 +25,7 @@ const TableItemDetails: React.FC<TableItemDetailsProps> = ({ product }) => {
         </Text>
       </Box>
       <Wrap flex={2}>
-        {MOCK_SPECIFICATIONS.map(s => {
+        {MOCK_SPECIFICATIONS.map((s) => {
           return (
             <WrapItem key={s}>
               <Tag

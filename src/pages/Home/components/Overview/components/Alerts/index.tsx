@@ -17,8 +17,8 @@ const Alerts: React.FC = () => {
   >(() => {
     if (!data) return {};
     return {
-      maintenance: data.find(d => d.type === 'Produtos em manutenção'),
-      lowStock: data.find(d => d.type === 'Acabando o estoque'),
+      maintenance: data.find((d) => d.type === 'Produtos em manutenção'),
+      lowStock: data.find((d) => d.type === 'Acabando o estoque'),
     };
   }, [data]);
 

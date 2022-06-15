@@ -13,7 +13,7 @@ const MonthlyTicket: React.FC = () => {
   return (
     <NumericCard
       header="Ticket médio mensal"
-      footer={value => ({
+      footer={(value) => ({
         prefix: 'R$',
         main: `${reaisLocale.format(value)}`,
       })}

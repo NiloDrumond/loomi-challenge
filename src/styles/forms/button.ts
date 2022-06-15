@@ -8,7 +8,7 @@ export const Button: ComponentStyleConfig = {
       borderColor: 'main.400',
       color: 'main.400',
     },
-    'icon-only': props => ({
+    'icon-only': (props) => ({
       ...theme.components.Button.variants.ghost(props),
       justifyContent: 'flex-start',
       px: '10px',

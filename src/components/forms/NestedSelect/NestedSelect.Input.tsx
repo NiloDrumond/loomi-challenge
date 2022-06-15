@@ -28,7 +28,7 @@ function NestedSelectInput<
       defaultValue={{} as UnpackNestedValue<PathValue<TFields, TName>>}
       render={({ field: { onChange, value } }) => (
         <NestedSelect
-          onChange={v => onChange({ target: { name, value: v } })}
+          onChange={(v) => onChange({ target: { name, value: v } })}
           selected={value as NestedSelectValue}
           options={options}
           inputLabel={inputLabel}

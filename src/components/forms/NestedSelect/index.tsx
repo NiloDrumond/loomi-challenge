@@ -34,7 +34,7 @@ const NestedSelect = ({
           if (par.includes(child)) {
             onChange({
               ...selected,
-              [parent]: par.filter(v => v !== child),
+              [parent]: par.filter((v) => v !== child),
             });
           } else {
             onChange({ ...selected, [parent]: [...par, child] });

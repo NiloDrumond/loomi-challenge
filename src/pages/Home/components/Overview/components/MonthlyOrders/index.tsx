@@ -12,7 +12,7 @@ const MonthlyOrders: React.FC = () => {
   return (
     <NumericCard
       header="Pedidos realizados no mês"
-      footer={value => ({ main: value.toString(), suffix: 'pedidos' })}
+      footer={(value) => ({ main: value.toString(), suffix: 'pedidos' })}
       inRelationTo="day"
       data={data}
     />

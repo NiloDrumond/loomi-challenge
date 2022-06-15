@@ -21,18 +21,11 @@
   "rules": {
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-use-before-define": "off",
-    "camelcase": "off",
-    "no-plusplus": "off",
-    "consistent-return": "off",
-    "no-param-reassign": "off",
     "no-use-before-define": "off",
-    "arrow-parens": "off",
+    "no-plusplus": "off",
     "prettier/prettier": "error",
-    "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
     "react/jsx-props-no-spreading": "off",
-    "react/prop-types": "off",
-    "react/require-default-props": "off",
     "react/jsx-filename-extension": [
       1,
       {

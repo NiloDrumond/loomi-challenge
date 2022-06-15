@@ -23,7 +23,7 @@ const ConversionFunnel: React.FC = () => {
           header="Sessões"
           data={data.totalPerDay}
           inRelationTo="day"
-          footer={value => ({
+          footer={(value) => ({
             main: value.toString(),
             suffix: 'visualizações',
           })}
@@ -33,7 +33,7 @@ const ConversionFunnel: React.FC = () => {
         <NumericCard
           header="Visualizações de produto"
           data={data.productsViewPerMonth}
-          footer={value => ({
+          footer={(value) => ({
             main: value.toString(),
             suffix: 'visualizações',
           })}
@@ -43,7 +43,7 @@ const ConversionFunnel: React.FC = () => {
         <NumericCard
           header="Conversão para a página de produtos"
           data={data.productPageConversionPerMonth}
-          footer={value => ({
+          footer={(value) => ({
             main: value.toString(),
             suffix: '%',
           })}
@@ -53,7 +53,7 @@ const ConversionFunnel: React.FC = () => {
         <NumericCard
           header="Adições ao Carrinho"
           data={data.addToCartPerMonth}
-          footer={value => ({
+          footer={(value) => ({
             main: value.toString(),
             suffix: 'produtos',
           })}
@@ -63,7 +63,7 @@ const ConversionFunnel: React.FC = () => {
         <NumericCard
           header="Checkout - Frete"
           data={data.checkoutShippingPerMonth}
-          footer={value => ({
+          footer={(value) => ({
             main: value.toString(),
             suffix: 'usuários',
           })}
@@ -73,7 +73,7 @@ const ConversionFunnel: React.FC = () => {
         <NumericCard
           header="Checkout - E-mail"
           data={data.checkoutEmailPerMonth}
-          footer={value => ({
+          footer={(value) => ({
             main: value.toString(),
             suffix: 'usuários',
           })}
@@ -83,7 +83,7 @@ const ConversionFunnel: React.FC = () => {
         <NumericCard
           header="Checkout - Cadastro"
           data={data.checkoutEmailPerMonth}
-          footer={value => ({
+          footer={(value) => ({
             main: value.toString(),
             suffix: 'usuários',
           })}
