@@ -12,7 +12,7 @@ const UploadInput = () => {
     },
     onDrop: (acceptedFiles: File[]) => {
       setFiles(
-        acceptedFiles.map(file =>
+        acceptedFiles.map((file) =>
           Object.assign(file, {
             preview: URL.createObjectURL(file),
           }),
@@ -23,7 +23,7 @@ const UploadInput = () => {
 
   return (
     <Wrap>
-      {files.map(file => {
+      {files.map((file) => {
         return (
           <WrapItem key={file.name}>
             <Image w="20" h="20" src={file.preview} />
@@ -46,4 +46,4 @@ const UploadInput = () => {
   );
 };
 
-export default UploadInput;
+export { UploadInput };

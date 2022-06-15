@@ -1,6 +1,6 @@
 import { Colors } from '@chakra-ui/react';
 
-export const colors: Colors = {
+const colors: Colors = {
   brand: {
     confirm: '#C0D7E5',
     main: '#5A4CA7',
@@ -25,3 +25,5 @@ export const colors: Colors = {
     orange: '#F18F7F',
   },
 };
+
+export { colors };

@@ -129,4 +129,4 @@ class AxiosHelper {
   }
 }
 
-export default AxiosHelper;
+export { AxiosHelper };

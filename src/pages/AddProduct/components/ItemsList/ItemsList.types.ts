@@ -1,12 +1,6 @@
-import { IProduct } from 'pages/AddProduct/AddProduct.types';
-import { Control, UseFieldArrayRemove } from 'react-hook-form';
-
-export type ItemsListProps = {
-  control: Control<IProduct>;
-};
+import { UseFieldArrayRemove } from 'react-hook-form';
 
 export type ItemsListItemProps = {
   index: number;
   remove: UseFieldArrayRemove;
-  control: Control<IProduct>;
 };

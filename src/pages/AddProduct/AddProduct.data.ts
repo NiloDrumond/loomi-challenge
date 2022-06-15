@@ -1,6 +1,6 @@
 import { NestedSelectOptions } from 'components/forms/NestedSelect/NestedSelect.types';
 
-export const colors: Option[] = [
+const colors: Option[] = [
   {
     label: 'Vermelho',
     value: 'red',
@@ -27,7 +27,7 @@ export const colors: Option[] = [
   },
 ];
 
-export const categories: NestedSelectOptions = [
+const categories: NestedSelectOptions = [
   {
     value: 'environments',
     label: 'Ambientes',
@@ -74,7 +74,7 @@ export const categories: NestedSelectOptions = [
   },
 ];
 
-export const tags: NestedSelectOptions = [
+const tags: NestedSelectOptions = [
   {
     value: 'environments',
     label: 'Ambientes',
@@ -104,3 +104,5 @@ export const tags: NestedSelectOptions = [
     ],
   },
 ];
+
+export { categories, colors, tags };

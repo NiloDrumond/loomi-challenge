@@ -10,16 +10,17 @@ import {
   IconButton,
   Select,
 } from '@chakra-ui/react';
-import FormSection from 'components/forms/FormSection';
-import FormInputWrapper from 'components/forms/FormInputWrapper';
+import { FormSection } from 'components/forms/FormSection';
+import { FormInputWrapper } from 'components/forms/FormInputWrapper';
 import { FiX } from 'react-icons/fi';
-import WithAlert from 'components/WithAlert';
-import { Controller } from 'react-hook-form';
+import { WithAlert } from 'components/WithAlert';
+import { Controller, useFormContext } from 'react-hook-form';
 import { colors } from 'pages/AddProduct/AddProduct.data';
-import UploadInput from 'components/forms/UploadInput';
+import { UploadInput } from 'components/forms/UploadInput';
 import { ItemsListItemProps } from './ItemsList.types';
 
-const ItemsListItem = ({ index, remove, control }: ItemsListItemProps) => {
+const ItemsListItem = ({ index, remove }: ItemsListItemProps) => {
+  const { control } = useFormContext();
   const { register } = control;
 
   const name = React.useMemo(() => {
@@ -44,7 +45,7 @@ const ItemsListItem = ({ index, remove, control }: ItemsListItemProps) => {
             <IconButton
               size="sm"
               icon={<Icon as={FiX} />}
-              aria-label=""
+              aria-label={`Deletar item ${name}`}
               onClick={onOpen}
               variant="ghost"
               color="red.600"
@@ -60,7 +61,7 @@ const ItemsListItem = ({ index, remove, control }: ItemsListItemProps) => {
       </HStack>
       <HStack spacing={16} w="100%">
         <FormSection containerProps={{ minW: '400px' }}>
-          <FormInputWrapper label="Codigo">
+          <FormInputWrapper label="Código">
             <Input {...register(`items.${index}.code`)} />
           </FormInputWrapper>
           <FormInputWrapper label="Cor">
@@ -69,7 +70,7 @@ const ItemsListItem = ({ index, remove, control }: ItemsListItemProps) => {
               render={({ field: { onChange, value } }) => (
                 <Select
                   value={value}
-                  onChange={e =>
+                  onChange={(e) =>
                     onChange({
                       target: {
                         name: `items.${index}.color`,
@@ -123,4 +124,4 @@ const ItemsListItem = ({ index, remove, control }: ItemsListItemProps) => {
   );
 };
 
-export default ItemsListItem;
+export { ItemsListItem };

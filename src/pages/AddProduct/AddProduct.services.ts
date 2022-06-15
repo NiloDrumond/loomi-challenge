@@ -1,6 +1,6 @@
 import { getLeaves } from 'components/forms/NestedSelect/NestedSelect.utils';
 import { API } from 'config';
-import api from 'services/axios';
+import { api } from 'services/axios';
 import { htmlDatetoSec } from 'utils/htmlDateToSec';
 import { validCode } from 'utils/validCode';
 import { IProduct } from './AddProduct.types';

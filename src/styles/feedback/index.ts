@@ -1,5 +1,7 @@
 import { Spinner } from './spinner';
 
-export const feedback = {
+const feedback = {
   Spinner,
 };
+
+export { feedback };

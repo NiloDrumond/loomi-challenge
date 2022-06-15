@@ -39,4 +39,4 @@ function PasswordInput({ registerReturn }: PasswordInputProps) {
   );
 }
 
-export default PasswordInput;
+export { PasswordInput };

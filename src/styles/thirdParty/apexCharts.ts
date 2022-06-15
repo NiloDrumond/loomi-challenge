@@ -1,4 +1,4 @@
-export const apexCharts = {
+const apexCharts = {
   '#chart .apexcharts-text': {
     fontFamily: 'Ubuntu !important',
     fontWeight: 700,
@@ -90,7 +90,6 @@ export const apexCharts = {
   '#chart.horizontal .apexcharts-tooltip': {
     color: 'main.500',
     transform: 'translateX(10px) translateY(12px)',
-    // overflow: 'visible !important',
     whiteSpace: 'normal !important',
     boxShadow: 'float',
     background: 'white',
@@ -148,3 +147,5 @@ export const apexCharts = {
     right: '2px',
   },
 };
+
+export { apexCharts };

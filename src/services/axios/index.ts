@@ -1,5 +1,5 @@
 import { API } from 'config';
-import AxiosHelper from './AxiosHelper';
+import { AxiosHelper } from './AxiosHelper';
 import { ApiConfig } from './types';
 
 const apiConfig: ApiConfig = {
@@ -8,4 +8,4 @@ const apiConfig: ApiConfig = {
 
 const api = new AxiosHelper(apiConfig);
 
-export default api;
+export { api };

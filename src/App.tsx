@@ -7,10 +7,10 @@ import '@fontsource/ubuntu/700.css';
 
 import { ChakraProvider } from '@chakra-ui/react';
 import { outlineWithTabOnly } from 'styles/utils/outlineWithTabOnly';
-import AuthProvider from 'hooks/auth/Auth.provider';
+import { AuthProvider } from 'hooks/auth/Auth.provider';
 import moment from 'moment';
-import theme from './styles';
-import AppRoutes from './routes';
+import { theme } from './styles';
+import { AppRoutes } from './routes';
 
 outlineWithTabOnly();
 moment.locale('pt-br');
@@ -27,4 +27,4 @@ const App = () => {
   );
 };
 
-export default App;
+export { App };

@@ -1,16 +1,16 @@
-import { Button, Icon, Tooltip, Box } from '@chakra-ui/react';
 import React from 'react';
+import { Button, Icon, Tooltip, Box } from '@chakra-ui/react';
 import { Link, useLocation } from 'react-router-dom';
 import { SidebarItemProps } from './Sidebar.types';
 
-const SidebarItem: React.FC<SidebarItemProps> = ({
+const SidebarItem = ({
   icon,
   label,
   linkTo,
   onClick,
   isExpanded,
   customTooltip,
-}) => {
+}: SidebarItemProps) => {
   const { pathname } = useLocation();
 
   // ------------
@@ -91,4 +91,4 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   );
 };
 
-export default SidebarItem;
+export { SidebarItem };

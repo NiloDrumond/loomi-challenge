@@ -1,8 +1,8 @@
 import React from 'react';
 import { WrapItem } from '@chakra-ui/react';
-import DashboardCard from 'components/DashboardCard';
+import { DashboardCard } from 'components/DashboardCard';
 
-const AlertsSkeleton: React.FC = () => {
+const AlertsSkeleton = () => {
   return (
     <>
       <WrapItem w="60">
@@ -15,4 +15,4 @@ const AlertsSkeleton: React.FC = () => {
   );
 };
 
-export default AlertsSkeleton;
+export { AlertsSkeleton };

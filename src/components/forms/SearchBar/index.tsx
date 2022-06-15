@@ -16,7 +16,7 @@ function SearchBar({ onChange, inputProps, containerProps }: SearchBarProps) {
     <InputGroup {...containerProps}>
       <Input
         value={text}
-        onChange={e => {
+        onChange={(e) => {
           setText(e.target.value);
         }}
         pr="4.5rem"
@@ -29,4 +29,4 @@ function SearchBar({ onChange, inputProps, containerProps }: SearchBarProps) {
   );
 }
 
-export default SearchBar;
+export { SearchBar };

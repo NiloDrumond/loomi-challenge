@@ -4,7 +4,7 @@ import { Image, HStack, Text } from '@chakra-ui/react';
 import Chair from 'assets/chair.png';
 import { TableItemTitleProps } from './TableItem.types';
 
-const TableItemTitle: React.FC<TableItemTitleProps> = ({ product }) => {
+const TableItemTitle = ({ product }: TableItemTitleProps) => {
   return (
     <HStack
       height="100%"
@@ -22,4 +22,4 @@ const TableItemTitle: React.FC<TableItemTitleProps> = ({ product }) => {
   );
 };
 
-export default TableItemTitle;
+export { TableItemTitle };

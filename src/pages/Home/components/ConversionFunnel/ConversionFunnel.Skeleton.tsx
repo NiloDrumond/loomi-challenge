@@ -1,8 +1,8 @@
 import React from 'react';
 import { Wrap, WrapItem } from '@chakra-ui/react';
-import DashboardCard from 'components/DashboardCard';
+import { DashboardCard } from 'components/DashboardCard';
 
-const ConversionFunnelSkeleton: React.FC = () => {
+const ConversionFunnelSkeleton = () => {
   return (
     <Wrap spacing={8}>
       <WrapItem w="60">
@@ -30,4 +30,4 @@ const ConversionFunnelSkeleton: React.FC = () => {
   );
 };
 
-export default ConversionFunnelSkeleton;
+export { ConversionFunnelSkeleton };

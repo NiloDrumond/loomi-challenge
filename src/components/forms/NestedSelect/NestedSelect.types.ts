@@ -10,13 +10,8 @@ export type NestedSelectProps = {
   options: NestedSelectOptions;
   selected?: NestedSelectValue;
   onChange: (value: NestedSelectValue) => void;
-};
-
-export type NestedSelectAccordionProps = {
-  name: string;
-  items: Option[];
-  onChange: (value: string) => void;
-  selected: string[];
+  inputLabel: string;
+  selectTitle: string;
 };
 
 export type NestedSelectInputProps<
@@ -26,4 +21,6 @@ export type NestedSelectInputProps<
   name: TName;
   control: Control<TFields>;
   options: NestedSelectOptions;
+  inputLabel: string;
+  selectTitle: string;
 };

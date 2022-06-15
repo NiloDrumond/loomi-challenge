@@ -5,7 +5,7 @@ import {
   PathValue,
   UnpackNestedValue,
 } from 'react-hook-form';
-import NestedSelect from '.';
+import { NestedSelect } from './NestedSelect';
 import {
   NestedSelectInputProps,
   NestedSelectValue,
@@ -14,7 +14,13 @@ import {
 function NestedSelectInput<
   TFields extends Record<string, unknown>,
   TName extends FieldPath<TFields>,
->({ control, name, options }: NestedSelectInputProps<TFields, TName>) {
+>({
+  control,
+  name,
+  options,
+  inputLabel,
+  selectTitle,
+}: NestedSelectInputProps<TFields, TName>) {
   return (
     <Controller
       control={control}
@@ -22,13 +28,15 @@ function NestedSelectInput<
       defaultValue={{} as UnpackNestedValue<PathValue<TFields, TName>>}
       render={({ field: { onChange, value } }) => (
         <NestedSelect
-          onChange={v => onChange({ target: { name, value: v } })}
+          onChange={(v) => onChange({ target: { name, value: v } })}
           selected={value as NestedSelectValue}
           options={options}
+          inputLabel={inputLabel}
+          selectTitle={selectTitle}
         />
       )}
     />
   );
 }
 
-export default NestedSelectInput;
+export { NestedSelectInput };
