@@ -18,7 +18,10 @@ const AppRoutes: React.FC = () => {
         <Route path="catalog" element={<AddProduct />} />
         <Route path="logistics" element={<Logistics />} />
       </Route>
-      <Route path="*" element={<Navigate to={token ? '/app' : '/login'} />} />
+      <Route
+        path="*"
+        element={<Navigate to={token ? '/app/logistics' : '/login'} />}
+      />
     </Routes>
   );
 };

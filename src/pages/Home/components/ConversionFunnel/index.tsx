@@ -3,9 +3,9 @@ import { Wrap, WrapItem } from '@chakra-ui/react';
 import useSWR from 'swr';
 import { API } from 'config';
 import { useSWRFetcher } from 'utils/useSWRFetcher';
+import NumericCard from 'components/NumericCard';
 import { parseResponse } from './ConversionFunnel.utils';
 import { ConversionFunnelData } from './ConversionFunnel.types';
-import NumericCard from '../NumericCard';
 import ConversionFunnelSkeleton from './ConversionFunnel.Skeleton';
 
 const ConversionFunnel: React.FC = () => {

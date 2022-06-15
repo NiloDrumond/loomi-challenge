@@ -8,11 +8,13 @@ const NumericCard = ({
   footer,
   header,
   inRelationTo = 'month',
+  cardProps,
 }: NumericCardProps) => {
   return !data ? (
-    <DashboardCard header={header} isLoading />
+    <DashboardCard header={header} isLoading cardProps={cardProps} />
   ) : (
     <DashboardCard
+      cardProps={cardProps}
       header={header}
       colorScheme={data.growth >= 0 ? 'teal' : 'pink'}
       extraInfo={`${data.growth >= 0 ? '+' : '-'} ${Math.abs(data.growth)} %`}

@@ -9,6 +9,7 @@ import {
   IconButton,
   Icon,
   Box,
+  Flex,
 } from '@chakra-ui/react';
 import Card from 'components/Card';
 import SearchBar from 'components/forms/SearchBar';
@@ -49,39 +50,41 @@ const ProductsList: React.FC = () => {
   }, [data]);
 
   return (
-    <Card p={10} w="100%" spacing={10}>
-      <HStack w="100%" justifyContent="space-between">
-        <Heading fontSize="2xl">Listagem de Produtos</Heading>
-        <SearchBar
-          onChange={onSearch}
-          inputProps={{ placeholder: 'Pesquisar produtos', size: 'lg' }}
-          containerProps={{ maxW: '96' }}
-        />
-      </HStack>
-      <VStack w="100%" spacing={0}>
-        <TableHeader />
-        {renderItems()}
-      </VStack>
-      <HStack w="100%" justifyContent="flex-end">
-        <HStack alignItems="center" spacing={2}>
-          {/* To define the amount of pages the api would need to provider a totalItems count */}
-          <Text color="gray.400">{`${page} de 40`}</Text>
-          <IconButton
-            isDisabled={page === 1}
-            onClick={() => setPage(prev => prev - 1)}
-            aria-label=""
-            variant="solid"
-            icon={<Icon w={6} h={6} as={FiChevronLeft} />}
-          />
-          <IconButton
-            aria-label=""
-            onClick={() => setPage(prev => prev + 1)}
-            variant="solid"
-            icon={<Icon w={6} h={6} as={FiChevronRight} />}
+    <Flex w="100%" pb={20}>
+      <Card w="100%" spacing={10}>
+        <HStack w="100%" justifyContent="space-between">
+          <Heading fontSize="2xl">Listagem de Produtos</Heading>
+          <SearchBar
+            onChange={onSearch}
+            inputProps={{ placeholder: 'Pesquisar produtos', size: 'lg' }}
+            containerProps={{ maxW: '96' }}
           />
         </HStack>
-      </HStack>
-    </Card>
+        <VStack w="100%" spacing={0}>
+          <TableHeader />
+          {renderItems()}
+        </VStack>
+        <HStack w="100%" justifyContent="flex-end">
+          <HStack alignItems="center" spacing={2}>
+            {/* To define the amount of pages the api would need to provider a totalItems count */}
+            <Text color="gray.400">{`${page} de 40`}</Text>
+            <IconButton
+              isDisabled={page === 1}
+              onClick={() => setPage(prev => prev - 1)}
+              aria-label=""
+              variant="solid"
+              icon={<Icon w={6} h={6} as={FiChevronLeft} />}
+            />
+            <IconButton
+              aria-label=""
+              onClick={() => setPage(prev => prev + 1)}
+              variant="solid"
+              icon={<Icon w={6} h={6} as={FiChevronRight} />}
+            />
+          </HStack>
+        </HStack>
+      </Card>
+    </Flex>
   );
 };
 

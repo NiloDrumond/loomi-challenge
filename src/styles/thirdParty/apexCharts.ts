@@ -1,4 +1,4 @@
-export const charts = {
+export const apexCharts = {
   '#chart .apexcharts-text': {
     fontFamily: 'Ubuntu !important',
     fontWeight: 700,

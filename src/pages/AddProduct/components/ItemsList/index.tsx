@@ -12,14 +12,7 @@ const ItemsList = ({ control }: ItemsListProps) => {
   });
 
   return (
-    <VStack
-      boxShadow="md"
-      bg="white"
-      p={8}
-      borderRadius="xl"
-      spacing={12}
-      w="100%"
-    >
+    <VStack bg="white" p={8} borderRadius="xl" spacing={12} w="100%">
       <HStack w="100%" justifyContent="space-between">
         <Text>Itens</Text>
         <Button

@@ -2,8 +2,8 @@ import React from 'react';
 import useSWR from 'swr';
 import { API } from 'config';
 import { useSWRFetcher } from 'utils/useSWRFetcher';
-import NumericCard from 'pages/Home/components/NumericCard';
-import { NumericCardData } from 'pages/Home/components/NumericCard/NumericCard.types';
+import NumericCard from 'components/NumericCard';
+import { NumericCardData } from 'components/NumericCard/NumericCard.types';
 
 const MonthlyOrders: React.FC = () => {
   const fetcher = useSWRFetcher<NumericCardData>();

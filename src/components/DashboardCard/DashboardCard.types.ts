@@ -1,3 +1,5 @@
+import { StackProps } from '@chakra-ui/react';
+
 export type DashboardCardColorSchemes = 'pink' | 'teal';
 
 export type DashboardCardFooter = {
@@ -13,6 +15,7 @@ export type DashboardCardProps = {
   extraInfo?: string;
   description?: string;
   footer?: DashboardCardFooter;
+  cardProps?: StackProps;
 };
 
 export type DashboardCardColors = {

@@ -1,3 +1,4 @@
+import { StackProps } from '@chakra-ui/react';
 import { DashboardCardFooter } from 'components/DashboardCard/DashboardCard.types';
 
 export type NumericCardData = {
@@ -10,4 +11,5 @@ export type NumericCardProps = {
   data?: NumericCardData;
   inRelationTo?: 'month' | 'day';
   footer: (value: number) => DashboardCardFooter;
+  cardProps?: StackProps;
 };

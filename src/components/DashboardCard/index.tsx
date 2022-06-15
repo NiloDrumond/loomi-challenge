@@ -11,13 +11,14 @@ const DashboardCard = ({
   footer,
   colorScheme,
   isLoading,
+  cardProps,
 }: DashboardCardProps) => {
   const colors = React.useMemo(() => {
     return getColors(colorScheme);
   }, [colorScheme]);
 
   return (
-    <Card minH="44" spacing={2} w="100%" h="100%">
+    <Card minH="44" spacing={2} w="100%" h="100%" {...cardProps}>
       {header && <Text fontWeight={700}>{header}</Text>}
       {isLoading ? (
         <Center w="100%" h="100%">

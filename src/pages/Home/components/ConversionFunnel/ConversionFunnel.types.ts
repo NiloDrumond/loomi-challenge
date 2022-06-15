@@ -1,4 +1,4 @@
-import { NumericCardData } from '../NumericCard/NumericCard.types';
+import { NumericCardData } from 'components/NumericCard/NumericCard.types';
 
 export type ConversionFunnelData = {
   totalPerDay: NumericCardData;

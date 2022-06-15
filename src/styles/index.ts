@@ -2,14 +2,15 @@ import { ChakraTheme, extendTheme, withDefaultVariant } from '@chakra-ui/react';
 import { colors } from './theme/colors';
 import { forms } from './forms';
 import { typography } from './typography';
-import { charts } from './charts';
 import { feedback } from './feedback';
+import { thirdParty } from './thirdParty';
 
 const theme = extendTheme(
   {
     colors,
     shadows: {
       float: '0px 0px 20px #0000001A',
+      strongFloat: '0px 0px 40px #00000050',
     },
     components: {
       ...forms,
@@ -19,7 +20,7 @@ const theme = extendTheme(
     styles: {
       global: () => ({
         // ...defaultTheme.styles,
-        ...charts,
+        ...thirdParty,
         'body > #root': {
           height: '100vh',
           width: '100vw',

@@ -22,6 +22,7 @@ const AppLayout: React.FC = ({ children }) => {
           <Flex
             flex={1}
             py={8}
+            h="100%"
             overflowY="scroll"
             overflowX="hidden"
             maxH="100%"

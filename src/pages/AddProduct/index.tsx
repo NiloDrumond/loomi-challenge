@@ -37,11 +37,11 @@ const AddProduct: React.FC = () => {
 
   return (
     <FormProvider {...methods}>
-      <VStack mb={10} flex={1} alignItems="flex-start" spacing={5}>
+      <VStack flex={1} alignItems="flex-start" spacing={5}>
         <Heading fontSize="2xl">Adicionar produto</Heading>
         <MainForm control={methods.control} />
         <ItemsList control={methods.control} />
-        <HStack spacing={4} px={8} pb={10} w="100%" justifyContent="flex-end">
+        <HStack spacing={4} px={8} pb={20} w="100%" justifyContent="flex-end">
           <Button bg="main.100" variant="solid">
             Cancelar
           </Button>

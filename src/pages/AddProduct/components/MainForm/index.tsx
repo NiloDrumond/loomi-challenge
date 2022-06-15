@@ -11,14 +11,7 @@ const MainForm = ({ control }: MainFormProps) => {
   const { register } = control;
 
   return (
-    <VStack
-      boxShadow="md"
-      bg="white"
-      p={8}
-      borderRadius="xl"
-      spacing={12}
-      w="100%"
-    >
+    <VStack bg="white" p={8} borderRadius="xl" spacing={12} w="100%">
       <HStack alignItems="flex-start" spacing={20} w="100%">
         <FormSection title="Detalhes">
           <FormInputWrapper label="Nome">

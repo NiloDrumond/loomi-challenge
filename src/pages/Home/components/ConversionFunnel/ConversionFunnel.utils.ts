@@ -1,5 +1,5 @@
 import { kebabToCamel } from 'utils/kebabToCamel';
-import { NumericCardData } from '../NumericCard/NumericCard.types';
+import { NumericCardData } from 'components/NumericCard/NumericCard.types';
 import { ConversionFunnelData } from './ConversionFunnel.types';
 
 function parseResponse(raw: unknown): ConversionFunnelData {
