@@ -44,7 +44,7 @@ const ItemsListItem = ({ index, remove, control }: ItemsListItemProps) => {
             <IconButton
               size="sm"
               icon={<Icon as={FiX} />}
-              aria-label=""
+              aria-label={`Deletar item ${name}`}
               onClick={onOpen}
               variant="ghost"
               color="red.600"

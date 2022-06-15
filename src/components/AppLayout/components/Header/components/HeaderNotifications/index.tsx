@@ -17,7 +17,10 @@ const HeaderNotifications = () => {
   return (
     <Popover placement="bottom-end" offset={[60, 30]} arrowSize={16}>
       <PopoverTrigger>
-        <IconButton icon={<Icon w={5} h={5} as={FiBell} />} aria-label="" />
+        <IconButton
+          icon={<Icon w={5} h={5} as={FiBell} />}
+          aria-label="ver notificações"
+        />
       </PopoverTrigger>
       <PopoverContent
         borderColor="main.400"

@@ -71,12 +71,12 @@ const ProductsList = () => {
             <IconButton
               isDisabled={page === 1}
               onClick={() => setPage((prev) => prev - 1)}
-              aria-label=""
+              aria-label="voltar página"
               variant="solid"
               icon={<Icon w={6} h={6} as={FiChevronLeft} />}
             />
             <IconButton
-              aria-label=""
+              aria-label="próxima página"
               onClick={() => setPage((prev) => prev + 1)}
               variant="solid"
               icon={<Icon w={6} h={6} as={FiChevronRight} />}
