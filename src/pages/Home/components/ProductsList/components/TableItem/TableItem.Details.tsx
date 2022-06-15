@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, HStack, Text, Wrap, WrapItem, Icon } from '@chakra-ui/react';
+import { Box, HStack, Text, Wrap, WrapItem, Icon, Tag } from '@chakra-ui/react';
 import { FiCheck, FiSlash } from 'react-icons/fi';
 
 import { TableItemDetailsProps } from './TableItem.types';
@@ -28,15 +28,15 @@ const TableItemDetails: React.FC<TableItemDetailsProps> = ({ product }) => {
         {MOCK_SPECIFICATIONS.map(s => {
           return (
             <WrapItem key={s}>
-              <Box
-                px={3}
+              <Tag
+                px={4}
                 py={1}
-                borderRadius="3xl"
                 bg="main.100"
                 color="main.500"
+                borderRadius="full"
               >
                 {s}
-              </Box>
+              </Tag>
             </WrapItem>
           );
         })}

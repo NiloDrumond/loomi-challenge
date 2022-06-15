@@ -31,3 +31,8 @@ export type NestedSelectInputProps<
   inputLabel: string;
   selectTitle: string;
 };
+
+export type NestedSelectSelectedProps = {
+  selected: NestedSelectValue;
+  options: NestedSelectOptions;
+};
