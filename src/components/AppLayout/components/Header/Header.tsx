@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, HStack, Image } from '@chakra-ui/react';
 import Logo from 'assets/logo-icon.svg';
 import { HeaderActions } from './components/HeaderActions';
-import { HeaderNotifications } from './components/HeaderNotifications';
+import { Notifications } from './components/Notifications';
 
 const Header = () => {
   return (
@@ -16,7 +16,7 @@ const Header = () => {
       <Image height="12" width="auto" src={Logo} />
       <HStack spacing={4}>
         <Button variant="outline">Realizar pedido</Button>
-        <HeaderNotifications />
+        <Notifications />
         <HeaderActions />
       </HStack>
     </HStack>
