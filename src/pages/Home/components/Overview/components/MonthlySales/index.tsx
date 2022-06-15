@@ -5,7 +5,7 @@ import { useSWRFetcher } from 'utils/useSWRFetcher';
 import NumericCard from 'components/NumericCard';
 import { NumericCardData } from 'components/NumericCard/NumericCard.types';
 
-const MonthlySales: React.FC = () => {
+const MonthlySales = () => {
   const fetcher = useSWRFetcher<NumericCardData>();
   const { data } = useSWR(API.SELLS_MONTH_URL, fetcher);
 

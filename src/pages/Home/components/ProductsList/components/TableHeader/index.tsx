@@ -1,7 +1,7 @@
 import React from 'react';
 import { Divider, HStack, Text, Box } from '@chakra-ui/react';
 
-const TableHeader: React.FC = () => {
+const TableHeader = () => {
   return (
     <HStack w="100%" color="white" spacing={10} fontWeight={700}>
       <HStack px={8} py={2} bg="main.300" borderRadius="md" flex={1}>

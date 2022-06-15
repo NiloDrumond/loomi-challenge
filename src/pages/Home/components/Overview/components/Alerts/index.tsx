@@ -8,7 +8,7 @@ import moment from 'moment';
 import { AlertData } from './Alerts.types';
 import AlertsSkeleton from './Alerts.Skeleton';
 
-const Alerts: React.FC = () => {
+const Alerts = () => {
   const fetcher = useSWRFetcher<AlertData[]>();
   const { data } = useSWR(API.ALERTS_URL, fetcher);
 

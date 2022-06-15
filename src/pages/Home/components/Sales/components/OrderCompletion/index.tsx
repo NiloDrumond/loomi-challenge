@@ -18,7 +18,7 @@ import { mapToValue } from 'utils/mapToValue';
 // The typing of react-apexcharts is still class-based
 const Chart = ReactApexChart as unknown as (params: Props) => JSX.Element;
 
-const OrderCompletion: React.FC = () => {
+const OrderCompletion = () => {
   const { colors } = useTheme();
 
   const fetcher = useSWRFetcher<number[]>({

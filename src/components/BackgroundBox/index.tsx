@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@chakra-ui/react';
 import Background from 'assets/curve-patterns.svg';
 
-const BackgroundBox: React.FC = () => {
+const BackgroundBox = () => {
   return (
     <Box
       top={0}

@@ -7,7 +7,7 @@ import Login from '../pages/Login';
 import { useAuth } from '../hooks/auth/useAuth';
 import AuthenticatedRoute from './AuthenticatedRoutes';
 
-const AppRoutes: React.FC = () => {
+const AppRoutes = () => {
   const { token } = useAuth();
 
   return (

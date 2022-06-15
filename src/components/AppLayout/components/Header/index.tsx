@@ -4,7 +4,7 @@ import Logo from 'assets/logo-icon.svg';
 import HeaderActions from './components/HeaderActions';
 import HeaderNotifications from './components/HeaderNotifications';
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <HStack
       boxShadow="md"

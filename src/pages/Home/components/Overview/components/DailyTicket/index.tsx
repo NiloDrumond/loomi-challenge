@@ -6,7 +6,7 @@ import { reaisLocale } from 'utils/reaisLocale';
 import NumericCard from 'components/NumericCard';
 import { NumericCardData } from 'components/NumericCard/NumericCard.types';
 
-const DailyTicket: React.FC = () => {
+const DailyTicket = () => {
   const fetcher = useSWRFetcher<NumericCardData>();
   const { data } = useSWR(API.AVG_TICKET_DAY, fetcher);
 

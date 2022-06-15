@@ -8,7 +8,7 @@ import { parseResponse } from './ConversionFunnel.utils';
 import { ConversionFunnelData } from './ConversionFunnel.types';
 import ConversionFunnelSkeleton from './ConversionFunnel.Skeleton';
 
-const ConversionFunnel: React.FC = () => {
+const ConversionFunnel = () => {
   const fetcher = useSWRFetcher<ConversionFunnelData>({
     parser: parseResponse,
   });

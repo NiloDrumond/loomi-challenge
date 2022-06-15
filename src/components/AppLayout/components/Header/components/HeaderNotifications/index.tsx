@@ -13,7 +13,7 @@ import {
 import { FiBell } from 'react-icons/fi';
 import ClosePopoverButton from 'components/ClosePopoverButton';
 
-const HeaderNotifications: React.FC = () => {
+const HeaderNotifications = () => {
   return (
     <Popover placement="bottom-end" offset={[60, 30]} arrowSize={16}>
       <PopoverTrigger>

@@ -3,7 +3,7 @@ import { Box, Heading, VStack } from '@chakra-ui/react';
 import Card from 'components/Card';
 import Map from 'components/Map';
 
-const Logistics: React.FC = () => {
+const Logistics = () => {
   return (
     <VStack flex={1} h="100%" alignItems="flex-start" spacing={6}>
       <Heading fontSize="2xl">Regiões de entrega</Heading>

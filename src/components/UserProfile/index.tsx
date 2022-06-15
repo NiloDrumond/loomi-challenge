@@ -2,11 +2,7 @@ import React from 'react';
 import { Text, HStack, Center, Avatar } from '@chakra-ui/react';
 import { UserProfileProps } from './UserProfile.types';
 
-const UserProfile: React.FC<UserProfileProps> = ({
-  name,
-  avatarUrl,
-  avatarOnly,
-}) => {
+const UserProfile = ({ name, avatarUrl, avatarOnly }: UserProfileProps) => {
   if (name.length === 0) return <></>;
 
   return (

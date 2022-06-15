@@ -30,7 +30,7 @@ const schema = yup
   })
   .required();
 
-const Login: React.FC = () => {
+const Login = () => {
   const { signIn, isLoading, token } = useAuth();
   const location = useLocation();
   const {

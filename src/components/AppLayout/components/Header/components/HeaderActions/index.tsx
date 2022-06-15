@@ -16,7 +16,7 @@ import { hoverOnBlack } from 'styles/utils/hoverOnBlack';
 import { useAuth } from 'hooks/auth/useAuth';
 import { useUser } from 'hooks/user/useUser';
 
-const HeaderActions: React.FC = () => {
+const HeaderActions = () => {
   const { signOut } = useAuth();
   const { userData } = useUser();
 

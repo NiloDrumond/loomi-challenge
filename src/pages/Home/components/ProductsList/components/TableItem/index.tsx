@@ -4,7 +4,7 @@ import TableItemTitle from './TableItem.Title';
 import { TableItemProps } from './TableItem.types';
 import TableItemDetails from './TableItem.Details';
 
-const TableItem: React.FC<TableItemProps> = ({ product }) => {
+const TableItem = ({ product }: TableItemProps) => {
   return (
     <HStack h="fit-content" w="100%" spacing={10}>
       <TableItemTitle product={product} />

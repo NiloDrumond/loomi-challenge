@@ -3,14 +3,14 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { SidebarItemProps } from './Sidebar.types';
 
-const SidebarItem: React.FC<SidebarItemProps> = ({
+const SidebarItem = ({
   icon,
   label,
   linkTo,
   onClick,
   isExpanded,
   customTooltip,
-}) => {
+}: SidebarItemProps) => {
   const { pathname } = useLocation();
 
   // ------------

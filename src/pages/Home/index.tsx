@@ -6,7 +6,7 @@ import UsersResume from './components/UsersResume';
 import Sales from './components/Sales';
 import ProductsList from './components/ProductsList';
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <VStack mb={10} flex={1} alignItems="flex-start" spacing={6}>
       <Heading fontSize="2xl">Início</Heading>

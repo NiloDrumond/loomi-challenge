@@ -6,7 +6,7 @@ import Alerts from './components/Alerts';
 import MonthlyOrders from './components/MonthlyOrders';
 import MonthlySales from './components/MonthlySales';
 
-const Overview: React.FC = () => {
+const Overview = () => {
   return (
     <Wrap spacing={8}>
       <WrapItem w="60">

@@ -16,7 +16,7 @@ import {
 } from 'react-icons/fi';
 import SidebarItem from './Sidebar.Item';
 
-const Sidebar: React.FC = () => {
+const Sidebar = () => {
   const { isOpen, onClose, onToggle } = useDisclosure();
   const containerRef = React.useRef<HTMLDivElement>(null);
   useOutsideClick({ handler: onClose, ref: containerRef });

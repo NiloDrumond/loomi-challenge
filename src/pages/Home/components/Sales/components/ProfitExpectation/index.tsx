@@ -34,7 +34,7 @@ const months = [
 // The typing of react-apexcharts is still class-based
 const Chart = ReactApexChart as unknown as (params: Props) => JSX.Element;
 
-const ProfitExpectation: React.FC = () => {
+const ProfitExpectation = () => {
   const { colors } = useTheme();
 
   const mock = generateMock();

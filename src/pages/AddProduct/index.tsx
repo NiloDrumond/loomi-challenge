@@ -7,7 +7,7 @@ import ItemsList from './components/ItemsList';
 import { createProductService } from './AddProduct.services';
 import MainForm from './components/MainForm';
 
-const AddProduct: React.FC = () => {
+const AddProduct = () => {
   const methods = useForm<IProduct>();
   const toast = useToast();
   const navigate = useNavigate();

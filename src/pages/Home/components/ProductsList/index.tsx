@@ -21,7 +21,7 @@ import TableItem from './components/TableItem';
 import TableHeader from './components/TableHeader';
 import NoContent from './components/NoContent';
 
-const ProductsList: React.FC = () => {
+const ProductsList = () => {
   const [page, setPage] = React.useState(1);
   const [searchQuery, setSearchQuery] = React.useState<string>('');
   const fetcher = useSWRFetcher<ProductsResponse>();

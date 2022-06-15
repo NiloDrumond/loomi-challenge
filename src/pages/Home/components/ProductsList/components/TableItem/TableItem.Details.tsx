@@ -6,7 +6,7 @@ import { TableItemDetailsProps } from './TableItem.types';
 
 const MOCK_SPECIFICATIONS = ['banco', 'sem braço', 'com braço', 'de madeira'];
 
-const TableItemDetails: React.FC<TableItemDetailsProps> = ({ product }) => {
+const TableItemDetails = ({ product }: TableItemDetailsProps) => {
   const enabled = Math.random() > 0.5;
 
   return (

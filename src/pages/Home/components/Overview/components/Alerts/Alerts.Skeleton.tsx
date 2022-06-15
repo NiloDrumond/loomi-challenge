@@ -2,7 +2,7 @@ import React from 'react';
 import { WrapItem } from '@chakra-ui/react';
 import DashboardCard from 'components/DashboardCard';
 
-const AlertsSkeleton: React.FC = () => {
+const AlertsSkeleton = () => {
   return (
     <>
       <WrapItem w="60">

@@ -3,7 +3,7 @@ import { Icon, IconButton, usePopoverContext } from '@chakra-ui/react';
 import { FiX } from 'react-icons/fi';
 import { hoverOnBlack } from 'styles/utils/hoverOnBlack';
 
-const ClosePopoverButton: React.FC = () => {
+const ClosePopoverButton = () => {
   const { onClose } = usePopoverContext();
   return (
     <IconButton
