@@ -6,7 +6,7 @@ import { NumericCardData } from 'components/NumericCard/NumericCard.types';
 import { NumericCard } from 'components/NumericCard';
 import { Box, useOutsideClick } from '@chakra-ui/react';
 import { MapCardProps } from './MapCard.types';
-import { useMapCard } from './useMapCard';
+import { useMapCard } from './MapCard.provider';
 
 const MapCard = ({ containerRef }: MapCardProps) => {
   const { position, region, setRegion } = useMapCard();
