@@ -43,7 +43,7 @@ function WithAlert({
             </AlertDialogHeader>
 
             <AlertDialogBody>
-              Tem certeza que deseja fazer isso? Essa acao nao podera ser
+              Tem certeza que deseja fazer isso? Essa ação não podera ser
               desfeita.
             </AlertDialogBody>
 

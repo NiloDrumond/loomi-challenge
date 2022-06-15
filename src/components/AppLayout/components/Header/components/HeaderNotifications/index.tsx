@@ -45,11 +45,11 @@ const HeaderNotifications: React.FC = () => {
             fontWeight={600}
             fontSize="lg"
           >
-            Notificacoes
+            Notificações
           </Box>
           <ClosePopoverButton />
         </PopoverHeader>
-        <PopoverBody>Are you sure you want to have that milkshake?</PopoverBody>
+        <PopoverBody />
       </PopoverContent>
     </Popover>
   );

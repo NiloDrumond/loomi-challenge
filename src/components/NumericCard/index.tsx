@@ -20,8 +20,8 @@ const NumericCard = ({
       extraInfo={`${data.growth >= 0 ? '+' : '-'} ${Math.abs(data.growth)} %`}
       description={
         inRelationTo === 'month'
-          ? `em relação a ${moment().subtract(1, 'month').format('MMMM')}`
-          : 'em relação a ontem'
+          ? `em relação à ${moment().subtract(1, 'month').format('MMMM')}`
+          : 'em relação à ontem'
       }
       footer={footer(data.value)}
     />

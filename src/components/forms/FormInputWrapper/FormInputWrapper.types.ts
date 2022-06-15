@@ -4,4 +4,5 @@ export type FormInputWrapperProps = {
   controlProps?: FormControlProps;
   label: string;
   topAlign?: boolean;
+  error?: string;
 };

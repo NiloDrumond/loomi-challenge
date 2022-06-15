@@ -37,6 +37,8 @@ const MainForm = ({ control }: MainFormProps) => {
             control={
               control as unknown as Control<Record<string, unknown>, unknown>
             }
+            inputLabel="Selecionar categorias"
+            selectTitle="Categorias"
           />
         </FormSection>
         <FormSection title="Tags">
@@ -46,15 +48,17 @@ const MainForm = ({ control }: MainFormProps) => {
             control={
               control as unknown as Control<Record<string, unknown>, unknown>
             }
+            inputLabel="Selecionar tags"
+            selectTitle="Tags"
           />
         </FormSection>
       </HStack>
       <Flex w="100%">
-        <FormSection title="Especificacoes">
-          <FormInputWrapper label="Subtitulo">
+        <FormSection title="Especificações">
+          <FormInputWrapper label="Subtítulo">
             <Input {...register('specificationsSubtitle')} />
           </FormInputWrapper>
-          <FormInputWrapper topAlign label="Informacoes">
+          <FormInputWrapper topAlign label="Informações">
             <Textarea {...register('specificationsInfo')} />
           </FormInputWrapper>
           <FormInputWrapper topAlign label="Limpeza e cuidados">

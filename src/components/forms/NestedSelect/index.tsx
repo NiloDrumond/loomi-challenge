@@ -16,7 +16,13 @@ import { motion } from 'framer-motion';
 import { NestedSelectProps } from './NestedSelect.types';
 import NestedSelectAccordion from './NestedSelect.Accordion';
 
-const NestedSelect = ({ onChange, options, selected }: NestedSelectProps) => {
+const NestedSelect = ({
+  onChange,
+  options,
+  selected,
+  inputLabel,
+  selectTitle,
+}: NestedSelectProps) => {
   const { isOpen, onToggle, onClose } = useDisclosure();
 
   const handleChange = React.useCallback(
@@ -51,7 +57,7 @@ const NestedSelect = ({ onChange, options, selected }: NestedSelectProps) => {
           onClick={onToggle}
           alignItems="center"
         >
-          Selecionar categorias
+          {inputLabel}
           <Center
             as={motion.div}
             animate={{ transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}
@@ -74,7 +80,7 @@ const NestedSelect = ({ onChange, options, selected }: NestedSelectProps) => {
       >
         <VStack w="100%" px={6} py={4} alignItems="flex-start">
           <Text color="main.300" fontSize="lg" fontWeight={700}>
-            Categorias
+            {selectTitle}
           </Text>
           <Accordion w="100%" borderWidth="0" allowToggle>
             {options.map(({ items, label, value }) => {

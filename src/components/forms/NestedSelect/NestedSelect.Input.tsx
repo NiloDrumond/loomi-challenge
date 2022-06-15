@@ -14,7 +14,13 @@ import {
 function NestedSelectInput<
   TFields extends Record<string, unknown>,
   TName extends FieldPath<TFields>,
->({ control, name, options }: NestedSelectInputProps<TFields, TName>) {
+>({
+  control,
+  name,
+  options,
+  inputLabel,
+  selectTitle,
+}: NestedSelectInputProps<TFields, TName>) {
   return (
     <Controller
       control={control}
@@ -25,6 +31,8 @@ function NestedSelectInput<
           onChange={v => onChange({ target: { name, value: v } })}
           selected={value as NestedSelectValue}
           options={options}
+          inputLabel={inputLabel}
+          selectTitle={selectTitle}
         />
       )}
     />

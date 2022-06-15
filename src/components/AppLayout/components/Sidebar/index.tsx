@@ -64,20 +64,20 @@ const Sidebar: React.FC = () => {
         />
         <SidebarItem
           linkTo="/app"
-          label="Inicio"
+          label="Início"
           icon={FiHome}
           isExpanded={isOpen}
         />
         <SidebarItem
           linkTo="/app/catalog"
-          label="Catalogo"
+          label="Catálogo"
           icon={FiLayers}
           isExpanded={isOpen}
         />
         <SidebarItem label="Servicos" icon={FiTool} isExpanded={isOpen} />
         <SidebarItem
           linkTo="/app/logistics"
-          label="Logistica"
+          label="Logística"
           icon={FiTruck}
           isExpanded={isOpen}
         />
@@ -92,13 +92,13 @@ const Sidebar: React.FC = () => {
           isExpanded={isOpen}
         />
         <SidebarItem
-          label="Comunicacao"
+          label="Comunicação"
           icon={FiMessageSquare}
           isExpanded={isOpen}
         />
         <SidebarItem label="Clientes" icon={FiUser} isExpanded={isOpen} />
         <SidebarItem
-          label="Configuracoes"
+          label="Configurações"
           icon={FiHexagon}
           isExpanded={isOpen}
         />

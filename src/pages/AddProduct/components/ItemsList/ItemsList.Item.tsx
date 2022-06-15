@@ -60,7 +60,7 @@ const ItemsListItem = ({ index, remove, control }: ItemsListItemProps) => {
       </HStack>
       <HStack spacing={16} w="100%">
         <FormSection containerProps={{ minW: '400px' }}>
-          <FormInputWrapper label="Codigo">
+          <FormInputWrapper label="Código">
             <Input {...register(`items.${index}.code`)} />
           </FormInputWrapper>
           <FormInputWrapper label="Cor">

@@ -14,6 +14,7 @@ const FormInputWrapper: React.FC<FormInputWrapperProps> = ({
   controlProps,
   topAlign,
   children,
+  error,
 }) => {
   return (
     <FormControl {...controlProps}>
@@ -25,7 +26,7 @@ const FormInputWrapper: React.FC<FormInputWrapperProps> = ({
         </Box>
         <VStack flex={1} alignItems="flex-start">
           {children}
-          <FormErrorMessage>Error muito grande pra caralho!</FormErrorMessage>
+          <FormErrorMessage>{error}</FormErrorMessage>
         </VStack>
       </HStack>
     </FormControl>
