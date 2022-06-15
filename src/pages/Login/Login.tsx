@@ -18,17 +18,10 @@ import Logo from 'assets/logo-icon.svg';
 import { PasswordInput } from 'components/forms/PasswordInput';
 import { BackgroundBox } from 'components/BackgroundBox';
 import { useAuth } from 'hooks/auth/useAuth';
-import { yup } from 'services/validations';
 import { useOnEnterPressed } from 'utils/useOnEnterPressed';
 import { Navigate, useLocation } from 'react-router-dom';
 import { LoginForm } from './Login.types';
-
-const schema = yup
-  .object({
-    email: yup.string().required().email().label('E-mail'),
-    password: yup.string().required().min(3).label('Senha'),
-  })
-  .required();
+import { schema } from './Login.utils';
 
 const Login = () => {
   const { signIn, isLoading, token } = useAuth();

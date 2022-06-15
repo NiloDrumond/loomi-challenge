@@ -2,13 +2,17 @@ import React from 'react';
 import { Button, Heading, HStack, useToast, VStack } from '@chakra-ui/react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { IProduct } from './AddProduct.types';
 import { ItemsList } from './components/ItemsList';
 import { createProductService } from './AddProduct.services';
 import { MainForm } from './components/MainForm';
+import { schema } from './AddProduct.utils';
 
 const AddProduct = () => {
-  const methods = useForm<IProduct>();
+  const methods = useForm<IProduct>({
+    resolver: yupResolver(schema, { abortEarly: false }),
+  });
   const toast = useToast();
   const navigate = useNavigate();
 
@@ -39,8 +43,8 @@ const AddProduct = () => {
     <FormProvider {...methods}>
       <VStack flex={1} alignItems="flex-start" spacing={5}>
         <Heading fontSize="2xl">Adicionar produto</Heading>
-        <MainForm control={methods.control} />
-        <ItemsList control={methods.control} />
+        <MainForm />
+        <ItemsList />
         <HStack spacing={4} px={8} pb={20} w="100%" justifyContent="flex-end">
           <Button bg="main.100" variant="solid">
             Cancelar

@@ -17,8 +17,8 @@ const FormInputWrapper: React.FC<FormInputWrapperProps> = ({
   error,
 }) => {
   return (
-    <FormControl {...controlProps}>
-      <HStack alignItems={topAlign ? 'flex-start' : 'center'}>
+    <FormControl {...controlProps} isInvalid={!!error}>
+      <HStack alignItems={topAlign || !!error ? 'flex-start' : 'center'}>
         <Box w="28">
           <Text mr={1}>{label}:</Text>
         </Box>

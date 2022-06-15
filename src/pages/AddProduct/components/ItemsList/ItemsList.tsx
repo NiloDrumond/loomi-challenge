@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button, Text, HStack, Icon, VStack } from '@chakra-ui/react';
 import { FiPlus } from 'react-icons/fi';
-import { useFieldArray } from 'react-hook-form';
-import { ItemsListProps } from './ItemsList.types';
+import { useFieldArray, useFormContext } from 'react-hook-form';
 import { ItemsListItem } from './ItemsList.Item';
 
-const ItemsList = ({ control }: ItemsListProps) => {
+const ItemsList = () => {
+  const { control } = useFormContext();
   const { fields, append, remove } = useFieldArray({
     control,
     name: 'items',
@@ -24,12 +24,7 @@ const ItemsList = ({ control }: ItemsListProps) => {
         </Button>
       </HStack>
       {fields.map((item, index) => (
-        <ItemsListItem
-          key={item.id}
-          index={index}
-          remove={remove}
-          control={control}
-        />
+        <ItemsListItem key={item.id} index={index} remove={remove} />
       ))}
     </VStack>
   );

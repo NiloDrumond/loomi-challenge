@@ -14,12 +14,13 @@ import { FormSection } from 'components/forms/FormSection';
 import { FormInputWrapper } from 'components/forms/FormInputWrapper';
 import { FiX } from 'react-icons/fi';
 import { WithAlert } from 'components/WithAlert';
-import { Controller } from 'react-hook-form';
+import { Controller, useFormContext } from 'react-hook-form';
 import { colors } from 'pages/AddProduct/AddProduct.data';
 import { UploadInput } from 'components/forms/UploadInput';
 import { ItemsListItemProps } from './ItemsList.types';
 
-const ItemsListItem = ({ index, remove, control }: ItemsListItemProps) => {
+const ItemsListItem = ({ index, remove }: ItemsListItemProps) => {
+  const { control } = useFormContext();
   const { register } = control;
 
   const name = React.useMemo(() => {

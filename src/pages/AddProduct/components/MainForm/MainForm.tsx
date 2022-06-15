@@ -3,27 +3,31 @@ import { Flex, HStack, Input, Textarea, VStack } from '@chakra-ui/react';
 import { FormInputWrapper } from 'components/forms/FormInputWrapper';
 import { FormSection } from 'components/forms/FormSection';
 import { NestedSelectInput } from 'components/forms/NestedSelect/NestedSelect.Input';
-import { Control } from 'react-hook-form';
+import { Control, useFormContext } from 'react-hook-form';
 import { categories, tags } from 'pages/AddProduct/AddProduct.data';
-import { MainFormProps } from './MainForm.types';
+import { IProduct } from 'pages/AddProduct';
 
-const MainForm = ({ control }: MainFormProps) => {
+const MainForm = () => {
+  const {
+    control,
+    formState: { errors },
+  } = useFormContext<IProduct>();
   const { register } = control;
 
   return (
     <VStack bg="white" p={8} borderRadius="xl" spacing={12} w="100%">
       <HStack alignItems="flex-start" spacing={20} w="100%">
         <FormSection title="Detalhes">
-          <FormInputWrapper label="Nome">
+          <FormInputWrapper error={errors.name?.message} label="Nome">
             <Input {...register('name')} />
           </FormInputWrapper>
-          <FormInputWrapper label="ID">
+          <FormInputWrapper error={errors.id?.message} label="ID">
             <Input {...register('id')} />
           </FormInputWrapper>
-          <FormInputWrapper label="Código">
+          <FormInputWrapper error={errors.code?.message} label="Código">
             <Input {...register('code')} />
           </FormInputWrapper>
-          <FormInputWrapper label="Seller">
+          <FormInputWrapper error={errors.seller?.message} label="Seller">
             <Input {...register('seller')} />
           </FormInputWrapper>
           <FormInputWrapper label="Prazo de entrega">
