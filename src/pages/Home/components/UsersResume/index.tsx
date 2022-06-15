@@ -18,7 +18,7 @@ const UsersResume = () => {
   return (
     <Wrap spacing={8} w="100%">
       <WrapItem>
-        <Card>
+        <Card px={6}>
           <Text fontWeight={700} color="main.500">
             Transações por idade
           </Text>
@@ -28,7 +28,7 @@ const UsersResume = () => {
         </Card>
       </WrapItem>
       <WrapItem>
-        <Card spacing={9}>
+        <Card px={6} spacing={9}>
           <Text fontWeight={700} color="main.500">
             Sessões por gênero
           </Text>
@@ -36,7 +36,7 @@ const UsersResume = () => {
         </Card>
       </WrapItem>
       <WrapItem>
-        <Card spacing={12}>
+        <Card px={6} spacing={12}>
           <Text fontWeight={700} color="main.500">
             Transações por tipo de cliente
           </Text>

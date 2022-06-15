@@ -149,8 +149,8 @@ const OrderCompletion: React.FC = () => {
   );
 
   return (
-    <Card>
-      <HStack w="100%" justifyContent="space-between">
+    <Card px={6}>
+      <HStack w="100%" alignItems="flex-start" justifyContent="space-between">
         <Text fontWeight={700} color="main.500">
           Pedidos realizados x pedidos cancelados
         </Text>
