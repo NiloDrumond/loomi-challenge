@@ -124,6 +124,7 @@ function Map() {
           disableDefaultUI: true,
           maxZoom: MAX_ZOOM,
           minZoom: MIN_ZOOM,
+          backgroundColor: 'white',
         }}
         onLoad={map => {
           loadRegions(map);
