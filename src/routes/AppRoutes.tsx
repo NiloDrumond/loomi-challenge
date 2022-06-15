@@ -18,10 +18,7 @@ const AppRoutes = () => {
         <Route path="catalog" element={<AddProduct />} />
         <Route path="logistics" element={<Logistics />} />
       </Route>
-      <Route
-        path="*"
-        element={<Navigate to={token ? '/app/logistics' : '/login'} />}
-      />
+      <Route path="*" element={<Navigate to={token ? '/app' : '/login'} />} />
     </Routes>
   );
 };

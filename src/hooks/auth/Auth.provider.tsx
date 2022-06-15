@@ -1,7 +1,6 @@
 import { useToast } from '@chakra-ui/react';
 import React from 'react';
 import { api } from 'services/axios';
-import { useNavigate } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 import { signInService } from './Auth.services';
 
@@ -14,27 +13,21 @@ const TOKEN_COOKIE_KEY = '@Loomi.Challenge:token';
 const AuthContext = React.createContext<AuthContextData>({} as AuthContextData);
 
 const AuthProvider: React.FC = ({ children }) => {
-  const navigate = useNavigate();
   const toast = useToast();
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(true);
   const [token, setToken] = React.useState<string | undefined>(undefined);
 
-  const authSuccess = React.useCallback(
-    (accessToken: string) => {
-      setToken(accessToken);
-      api.setToken(`Bearer ${accessToken}`);
-
-      navigate({ pathname: '/app' });
-    },
-    [navigate],
-  );
+  const authSuccess = React.useCallback((accessToken: string) => {
+    setToken(accessToken);
+    api.setToken(`Bearer ${accessToken}`);
+  }, []);
 
   const signIn = React.useCallback(
     async (data: SignInData) => {
       setIsLoading(true);
       try {
         const accessToken = await signInService(data);
-        cookies.set(TOKEN_COOKIE_KEY, accessToken);
+        cookies.set(TOKEN_COOKIE_KEY, accessToken, { path: '/' });
         authSuccess(accessToken);
         setIsLoading(false);
       } catch (e) {
@@ -51,8 +44,8 @@ const AuthProvider: React.FC = ({ children }) => {
   );
 
   const signOut = React.useCallback(() => {
+    cookies.remove(TOKEN_COOKIE_KEY, { path: '/' });
     setToken(undefined);
-    cookies.remove(TOKEN_COOKIE_KEY);
     api.clearToken();
   }, []);
 
@@ -61,6 +54,7 @@ const AuthProvider: React.FC = ({ children }) => {
     if (accessToken && !token) {
       authSuccess(accessToken);
     }
+    setIsLoading(false);
   }, [authSuccess, token]);
 
   return (
