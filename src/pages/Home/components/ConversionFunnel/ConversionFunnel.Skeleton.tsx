@@ -1,6 +1,6 @@
 import React from 'react';
 import { Wrap, WrapItem } from '@chakra-ui/react';
-import DashboardCard from 'components/DashboardCard';
+import { DashboardCard } from 'components/DashboardCard';
 
 const ConversionFunnelSkeleton = () => {
   return (
@@ -30,4 +30,4 @@ const ConversionFunnelSkeleton = () => {
   );
 };
 
-export default ConversionFunnelSkeleton;
+export { ConversionFunnelSkeleton };

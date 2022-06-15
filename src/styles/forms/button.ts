@@ -1,6 +1,6 @@
 import { ComponentStyleConfig, theme } from '@chakra-ui/react';
 
-export const Button: ComponentStyleConfig = {
+const Button: ComponentStyleConfig = {
   baseStyle: { fontWeight: 400, color: 'main.400' },
 
   variants: {
@@ -19,3 +19,5 @@ export const Button: ComponentStyleConfig = {
     }),
   },
 };
+
+export { Button };

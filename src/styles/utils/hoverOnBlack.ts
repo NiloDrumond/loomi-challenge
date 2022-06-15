@@ -1,4 +1,4 @@
-export const hoverOnBlack = () => {
+const hoverOnBlack = () => {
   return {
     _hover: {
       bg: 'gray.100',
@@ -6,3 +6,5 @@ export const hoverOnBlack = () => {
     },
   };
 };
+
+export { hoverOnBlack };

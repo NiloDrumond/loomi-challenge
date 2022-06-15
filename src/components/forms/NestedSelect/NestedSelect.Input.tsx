@@ -5,7 +5,7 @@ import {
   PathValue,
   UnpackNestedValue,
 } from 'react-hook-form';
-import NestedSelect from '.';
+import { NestedSelect } from './NestedSelect';
 import {
   NestedSelectInputProps,
   NestedSelectValue,
@@ -39,4 +39,4 @@ function NestedSelectInput<
   );
 }
 
-export default NestedSelectInput;
+export { NestedSelectInput };

@@ -1,6 +1,6 @@
 import { useToast } from '@chakra-ui/react';
 import React from 'react';
-import api from 'services/axios';
+import { api } from 'services/axios';
 import { validCode } from './validCode';
 
 export type SWRFetcherConfig<T> = {
@@ -22,7 +22,7 @@ function useSWRFetcher<T>(config?: SWRFetcherConfig<T>) {
   }, [config]);
 
   const fetcher = React.useCallback(
-    async (url: string) => {
+    async (url: string): Promise<T | undefined> => {
       const response = await api.get<T>({ url });
 
       if (validateCode(response.statusCode)) {

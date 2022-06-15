@@ -1,8 +1,8 @@
 import React from 'react';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import { useAuth } from 'hooks/auth/useAuth';
-import AppLayout from 'components/AppLayout';
-import UserProvider from 'hooks/user/User.provider';
+import { AppLayout } from 'components/AppLayout';
+import { UserProvider } from 'hooks/user/User.provider';
 
 const AuthenticatedRoute = () => {
   const { token } = useAuth();
@@ -21,4 +21,4 @@ const AuthenticatedRoute = () => {
   );
 };
 
-export default AuthenticatedRoute;
+export { AuthenticatedRoute };

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from './Auth.provider';
 import { UseAuthenticatedData } from './Auth.types';
 
-export function useAuthenticated(): UseAuthenticatedData {
+function useAuthenticated(): UseAuthenticatedData {
   const { token, ...rest } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -15,3 +15,5 @@ export function useAuthenticated(): UseAuthenticatedData {
 
   return { token: '', ...rest };
 }
+
+export { useAuthenticated };

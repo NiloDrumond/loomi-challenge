@@ -22,4 +22,4 @@ const TableItemTitle = ({ product }: TableItemTitleProps) => {
   );
 };
 
-export default TableItemTitle;
+export { TableItemTitle };

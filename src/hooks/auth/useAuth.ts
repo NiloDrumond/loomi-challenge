@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { AuthContext } from './Auth.provider';
 import { AuthContextData } from './Auth.types';
 
-export function useAuth(): AuthContextData {
+function useAuth(): AuthContextData {
   const context = useContext(AuthContext);
 
   if (!context) {
@@ -11,3 +11,5 @@ export function useAuth(): AuthContextData {
 
   return context;
 }
+
+export { useAuth };

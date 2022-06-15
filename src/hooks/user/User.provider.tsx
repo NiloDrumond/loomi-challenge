@@ -5,9 +5,7 @@ import { UserContextData, UserData } from './User.types';
 
 const USER_STORAGE_KEY = '@Loomi.Challenge:userData';
 
-export const UserContext = React.createContext<UserContextData>(
-  {} as UserContextData,
-);
+const UserContext = React.createContext<UserContextData>({} as UserContextData);
 
 const UserProvider: React.FC = ({ children }) => {
   const [userData, setUserData] = React.useState<UserData | undefined>(
@@ -31,4 +29,4 @@ const UserProvider: React.FC = ({ children }) => {
   );
 };
 
-export default UserProvider;
+export { UserProvider, UserContext };

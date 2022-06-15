@@ -58,4 +58,4 @@ const TableItemDetails = ({ product }: TableItemDetailsProps) => {
   );
 };
 
-export default TableItemDetails;
+export { TableItemDetails };

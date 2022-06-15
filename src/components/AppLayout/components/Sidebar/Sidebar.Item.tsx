@@ -1,5 +1,5 @@
-import { Button, Icon, Tooltip, Box } from '@chakra-ui/react';
 import React from 'react';
+import { Button, Icon, Tooltip, Box } from '@chakra-ui/react';
 import { Link, useLocation } from 'react-router-dom';
 import { SidebarItemProps } from './Sidebar.types';
 
@@ -91,4 +91,4 @@ const SidebarItem = ({
   );
 };
 
-export default SidebarItem;
+export { SidebarItem };

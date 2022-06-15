@@ -1,6 +1,6 @@
 import React from 'react';
 import { WrapItem } from '@chakra-ui/react';
-import DashboardCard from 'components/DashboardCard';
+import { DashboardCard } from 'components/DashboardCard';
 
 const AlertsSkeleton = () => {
   return (
@@ -15,4 +15,4 @@ const AlertsSkeleton = () => {
   );
 };
 
-export default AlertsSkeleton;
+export { AlertsSkeleton };

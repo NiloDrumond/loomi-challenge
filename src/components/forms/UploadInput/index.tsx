@@ -46,4 +46,4 @@ const UploadInput = () => {
   );
 };
 
-export default UploadInput;
+export { UploadInput };

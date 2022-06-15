@@ -1,5 +1,5 @@
 import { API } from 'config';
-import api from 'services/axios';
+import { api } from 'services/axios';
 import { SignInData, SignInResponse } from './Auth.types';
 
 async function signInService({ email, password }: SignInData): Promise<string> {

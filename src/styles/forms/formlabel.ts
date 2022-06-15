@@ -1,6 +1,6 @@
 import { ComponentStyleConfig } from '@chakra-ui/react';
 
-export const FormLabel: ComponentStyleConfig = {
+const FormLabel: ComponentStyleConfig = {
   baseStyle: {
     fontWeight: 400,
     fontSize: 'md',
@@ -8,3 +8,5 @@ export const FormLabel: ComponentStyleConfig = {
     marginLeft: '4',
   },
 };
+
+export { FormLabel };

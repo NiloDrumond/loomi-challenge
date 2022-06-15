@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { UserContext } from './User.provider';
 import { UserContextData } from './User.types';
 
-export function useUser(): UserContextData {
+function useUser(): UserContextData {
   const context = useContext(UserContext);
 
   if (!context) {
@@ -11,3 +11,5 @@ export function useUser(): UserContextData {
 
   return context;
 }
+
+export { useUser };

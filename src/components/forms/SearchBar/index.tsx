@@ -29,4 +29,4 @@ function SearchBar({ onChange, inputProps, containerProps }: SearchBarProps) {
   );
 }
 
-export default SearchBar;
+export { SearchBar };

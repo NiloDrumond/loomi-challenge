@@ -1,6 +1,6 @@
 import { useToast } from '@chakra-ui/react';
 import React from 'react';
-import api from 'services/axios';
+import { api } from 'services/axios';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 import { signInService } from './Auth.services';
@@ -11,9 +11,7 @@ const cookies = new Cookies();
 
 const TOKEN_COOKIE_KEY = '@Loomi.Challenge:token';
 
-export const AuthContext = React.createContext<AuthContextData>(
-  {} as AuthContextData,
-);
+const AuthContext = React.createContext<AuthContextData>({} as AuthContextData);
 
 const AuthProvider: React.FC = ({ children }) => {
   const navigate = useNavigate();
@@ -72,4 +70,4 @@ const AuthProvider: React.FC = ({ children }) => {
   );
 };
 
-export default AuthProvider;
+export { AuthContext, AuthProvider };

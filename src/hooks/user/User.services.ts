@@ -1,5 +1,5 @@
 import { API } from 'config';
-import api from 'services/axios';
+import { api } from 'services/axios';
 import { validCode } from 'utils/validCode';
 import { UserData } from './User.types';
 

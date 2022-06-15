@@ -3,4 +3,4 @@ import { pt } from 'yup-locale-pt';
 
 yup.setLocale(pt);
 
-export default yup;
+export { yup };
