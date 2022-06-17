@@ -1,6 +1,4 @@
-
-
-
+Deploy: https://loomi-challenge.vercel.app
 
 # Loomi Challenge
 
